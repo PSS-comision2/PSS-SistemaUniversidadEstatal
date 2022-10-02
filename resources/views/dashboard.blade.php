@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html data-theme="dark">
+<html data-theme="autumn">
 
 <head>
     <meta charset="UTF-8">
@@ -11,7 +11,7 @@
 <body>
 
     <link href="https://cdn.jsdelivr.net/npm/daisyui@2.31.0/dist/full.css" rel="stylesheet" type="text/css" />
-    <div class="navbar bg-base-100" data-theme="autumn">
+    <div class="navbar bg-base-100">
         <div class="navbar-start">
             <div class="dropdown">
                 <ul class="menu menu-horizontal p-0">
@@ -65,8 +65,16 @@
                             <path d="M7.41,8.58L12,13.17L16.59,8.58L18,10L12,16L6,10L7.41,8.58Z" />
                         </svg>
                     </a>
-                    <ul class="p-2 bg-base-100">
-                        <li><a>Cerrar Sesión</a></li>
+                    <ul class="btn btn-outline">
+                        <li>
+                            <form id="logout-form" action="{{ route('logout') }}" method="POST">
+                                <a href="javascript:;" class=""
+                                    onclick="document.getElementById('logout-form').submit();">
+                                    <span class=" ">Cerrar sesión</span>
+                                </a>
+                                @csrf
+                            </form>
+                        </li>
                     </ul>
                 </li>
             </ul>
