@@ -5,11 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Administrador extends Model
+class Tiene extends Model
 {
     use HasFactory;
-
-    protected $table = "administradores";
-    protected $primaryKey = "usuario";
-    public $timestamps = false; 
 }

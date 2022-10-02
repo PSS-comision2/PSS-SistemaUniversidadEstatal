@@ -10,5 +10,6 @@ class Carrera extends Model
     use HasFactory;
 
     protected $table = "carreras";
+    protected $primaryKey = "legajo";
     public $timestamps = false; 
 }

@@ -10,15 +10,15 @@ class Alumno extends Model
     use HasFactory;
 
     protected $table = "alumnos";
-    protected $primaryKey = "id_alumno";
+    protected $primaryKey = "LU";
     public $timestamps = false; 
 
     public function cursadas() {
-        return $this->belongsToMany(Materia::class, 'cursadas', 'id_alumno', 'id_materia');
+        return $this->belongsToMany(Materia::class, 'cursadas', 'LU', 'codigo');
     }
 
     public function finales() {
-        return $this->belongsToMany(ExamenFinal::class, 'examenfinales', 'id_alumno', 'id_examenfinal');
+        return $this->belongsToMany(ExamenFinal::class, 'examenfinales', 'LU', 'codigo_final');
     }
 
 

@@ -10,5 +10,6 @@ class Profesor extends Model
     use HasFactory;
 
     protected $table = "profesores" ;
+    protected $primaryKey = "legajo";
     public $timestamps = false; 
 }
