@@ -16,6 +16,11 @@ return new class extends Migration
         Schema::create('cursa', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
+            $table->date('fecha_inicio');
+            $table->integer('LU_alumno');
+            $table->integer('codigo_materia');
+            $table->foreign('LU_alumno')->references('LU')->on('alumnos')->onUpdate('cascade')->onDelete('cascade'); 
+            $table->foreign('codigo_materia')->references('codigo')->on('materias')->onUpdate('cascade')->onDelete('cascade'); 
         });
     }
 

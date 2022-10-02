@@ -16,6 +16,9 @@ return new class extends Migration
         Schema::create('examenes_finales', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
+            $table->integer('codigo');
+            $table->date('fecha');
+            $table->time('hora');
         });
     }
 
