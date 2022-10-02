@@ -12,4 +12,8 @@ class Carrera extends Model
     protected $table = "carreras";
     protected $primaryKey = "legajo";
     public $timestamps = false; 
+
+    public function carrera_materia() {
+        return $this->belongsToMany(Materia::class, 'tiene', 'legajo', 'codigo');
+    }
 }

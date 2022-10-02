@@ -8,4 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class Tiene extends Model
 {
     use HasFactory;
+
+    protected $table = "tiene";
+    protected $timestamps = false;
 }
