@@ -8,4 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class Rinde extends Model
 {
     use HasFactory;
+
+    protected $table = "rinde";
+    public $timestamps = false; 
 }

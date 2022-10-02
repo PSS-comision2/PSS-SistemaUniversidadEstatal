@@ -8,4 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class CorrelativaAprobada extends Model
 {
     use HasFactory;
+
+    protected $table = "correlativaaprobadas";
+    public $timestamps = false; 
 }
