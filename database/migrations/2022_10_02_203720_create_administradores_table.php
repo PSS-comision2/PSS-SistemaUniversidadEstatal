@@ -16,6 +16,14 @@ return new class extends Migration
         Schema::create('administradores', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
+            $table->string('usuario');
+            $table->string('nombre');
+            $table->string('apellido');
+            $table->integer('DNI');
+            $table->string('email');
+            $table->integer('celular');
+            $table->string('contrasenia');
+
         });
     }
 
