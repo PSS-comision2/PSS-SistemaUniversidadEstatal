@@ -16,7 +16,7 @@ return new class extends Migration
         Schema::create('materias', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
-            $table->integer('codigo');
+            $table->integer('codigo')->unique();
             $table->string('nombre');
             $table->string('plan_pdf');
         });
