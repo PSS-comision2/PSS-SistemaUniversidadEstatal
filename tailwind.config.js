@@ -1,8 +1,7 @@
 const defaultTheme = require('tailwindcss/defaultTheme');
 
-/** @type {import('tailwindcss').Config} */
 module.exports = {
-    content: [
+    purge: [
         './vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php',
         './storage/framework/views/*.php',
         './resources/views/**/*.blade.php',
@@ -16,9 +15,11 @@ module.exports = {
         },
     },
 
-    daisyui: {
-        themes: ["autumn"],
-      },
+    variants: {
+        extend: {
+            opacity: ['disabled'],
+        },
+    },
 
-    plugins: [require("daisyui")],
+    plugins: [require('@tailwindcss/forms')],
 };
