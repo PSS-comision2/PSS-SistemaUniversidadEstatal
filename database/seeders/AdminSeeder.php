@@ -27,6 +27,24 @@ class AdminSeeder extends Seeder
                 'celular' => '154748653',
                 'password' =>  Hash::make('ng2000'),
             ],
+            [
+                'nombre' => 'Roberto',
+                'apellido' => 'Cuenca',
+                'DNI' => '37464679',
+                'usuario' => 'admin2',
+                'email' => 'robertoc@hotmail.com',
+                'celular' => '155764379',
+                'password' =>  Hash::make('A1/+'),
+            ],
+            [
+                'nombre' => 'Santiago',
+                'apellido' => 'Jimenez',
+                'DNI' => '40643674',
+                'usuario' => 'admin3',
+                'email' => 'santijimenez@gmail.com',
+                'celular' => '15465357',
+                'password' =>  Hash::make('123'),
+            ],
 
     ];
 
