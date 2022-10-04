@@ -21,8 +21,7 @@
             <!-- legajo -->
             <div>
                 <x-label for="legajo" :value="__('Legajo')" />
-
-                <x-input id="legajo" class="block mt-1 w-full" type="integer" name="legajo" :value="old('legajo')" required autofocus />
+                <x-input id="legajo" class="block mt-1 w-full" type="text" name="legajo" :value="old('legajo')" required autofocus />
             </div>
 
             <!-- Password -->
