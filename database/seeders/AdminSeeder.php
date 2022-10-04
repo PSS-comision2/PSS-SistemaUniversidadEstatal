@@ -20,16 +20,17 @@ class AdminSeeder extends Seeder
         $data = [
             [
                 'name' => 'Nicolás',
-                //'apellido' => 'González',
-               // 'DNI' => '35753578',
-                //'usuario' => 'admin1',
+                'apellido' => 'González',
+                'DNI' => '35753578',
+                'usuario' => 'admin1',
                 'email' => 'nicogonzalez@gmail.com',
-                //'celular' => '154748653',
+                'celular' => '154748653',
                 'password' =>  Hash::make('ng2000'),
             ],
 
     ];
 
-    DB::table('administradors')->insert($data);
+    DB::table('administradores')->insert($data);
+
     }
 }
