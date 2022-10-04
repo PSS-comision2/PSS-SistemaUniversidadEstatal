@@ -19,13 +19,31 @@ class ProfesorSeeder extends Seeder
     {
         $data = [
             [
-                'legajo' => '125609',
-                'name' => 'Juan',
-                'apellido' => 'Perez',
-                'DNI' => '42567890',
-                'email' => 'juan@hotmail.com',
-                'celular' => '23926525',
-                'password' => Hash::make('123'),
+                'legajo' => '12345',
+                'nombre' => 'Fernando',
+                'apellido' => 'Gutierrez',
+                'DNI' => '39754579',
+                'email' => 'fgutierrez@gmail.com',
+                'celular' => '154875466',
+                'password' => Hash::make('abc'),
+            ],
+            [
+                'legajo' => '67474',
+                'nombre' => 'Gonzalo',
+                'apellido' => 'Rodriguez',
+                'DNI' => '35864563',
+                'email' => 'grodriguez@hotmail.com',
+                'celular' => '155746741',
+                'password' => Hash::make('123ABC'),
+            ],
+            [
+                'legajo' => '74742',
+                'nombre' => 'Javier',
+                'apellido' => 'Bustamante',
+                'DNI' => '37548642',
+                'email' => 'bustamantej@gmail.com',
+                'celular' => '154856874',
+                'password' => Hash::make('12345'),
             ],
     ];
     DB::table('profesores')->insert($data);
