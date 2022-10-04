@@ -29,7 +29,7 @@ class LoginRequest extends FormRequest
     public function rules()
     {
         return [
-            'email' => 'required|string|email',
+            'legajo' => 'required|integer',
             'password' => 'required|string',
         ];
     }
@@ -45,11 +45,11 @@ class LoginRequest extends FormRequest
     {
         $this->ensureIsNotRateLimited();
 
-        if (! Auth::guard('profesor')->attempt($this->only('email', 'password'), $this->filled('remember'))) {
+        if (! Auth::guard('profesor')->attempt($this->only('legajo', 'password'), $this->filled('remember'))) {
             RateLimiter::hit($this->throttleKey());
 
             throw ValidationException::withMessages([
-                'email' => __('auth.failed'),
+                'legajo' => __('auth.failed'),
             ]);
         }
 
@@ -74,7 +74,7 @@ class LoginRequest extends FormRequest
         $seconds = RateLimiter::availableIn($this->throttleKey());
 
         throw ValidationException::withMessages([
-            'email' => trans('auth.throttle', [
+            'legajo' => trans('auth.throttle', [
                 'seconds' => $seconds,
                 'minutes' => ceil($seconds / 60),
             ]),
@@ -88,6 +88,6 @@ class LoginRequest extends FormRequest
      */
     public function throttleKey()
     {
-        return Str::lower($this->input('email')).'|'.$this->ip().'|profesor';
+        return Str::lower($this->input('legajo')).'|'.$this->ip().'|profesor';
     }
 }

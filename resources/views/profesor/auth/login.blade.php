@@ -15,11 +15,11 @@
         <form method="POST" action="{{ route('profesor.login') }}">
             @csrf
 
-            <!-- Email Address -->
+            <!-- legajo -->
             <div>
-                <x-label for="email" :value="__('Email')" />
+                <x-label for="legajo" :value="__('Email')" />
 
-                <x-input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email')" required autofocus />
+                <x-input id="legajo" class="block mt-1 w-full" type="integer" name="legajo" :value="old('legajo')" required autofocus />
             </div>
 
             <!-- Password -->
