@@ -22,7 +22,8 @@ return new class extends Migration
             $table->integer('DNI')->unique();
             $table->string('email')->unique();
             $table->integer('celular');
-            $table->string('contrasenia');
+            $table->string('password');
+            $table->rememberToken();
         });
     }
 

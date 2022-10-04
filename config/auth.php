@@ -44,6 +44,10 @@ return [
             'driver' => 'session',
             'provider' => 'administradors',
         ],
+        'profesor' => [
+            'driver' => 'session',
+            'provider' => 'profesors',
+        ],
     ],
 
     /*
@@ -77,6 +81,10 @@ return [
             'driver' => 'eloquent',
             'model' => App\Models\Administrador::class,
         ],
+        'profesors' => [
+            'driver' => 'eloquent',
+            'model' => App\Models\Profesor::class,
+        ],
     ],
 
     /*
@@ -103,6 +111,12 @@ return [
         ],
         'administradors' => [
             'provider' => 'administradors',
+            'table' => 'password_resets',
+            'expire' => 60,
+            'throttle' => 60,
+        ],
+        'profesors' => [
+            'provider' => 'profesors',
             'table' => 'password_resets',
             'expire' => 60,
             'throttle' => 60,
