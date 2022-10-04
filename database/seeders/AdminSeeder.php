@@ -19,7 +19,7 @@ class AdminSeeder extends Seeder
     {
         $data = [
             [
-                'name' => 'Nicolás',
+                'nombre' => 'Nicolás',
                 'apellido' => 'González',
                 'DNI' => '35753578',
                 'usuario' => 'admin1',

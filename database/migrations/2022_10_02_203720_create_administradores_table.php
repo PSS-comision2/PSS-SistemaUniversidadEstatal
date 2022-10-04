@@ -17,7 +17,7 @@ return new class extends Migration
             $table->id();
             $table->timestamps();
             $table->string('usuario')->unique();
-            $table->string('name');
+            $table->string('nombre');
             $table->string('apellido');
             $table->integer('DNI')->unique();
             $table->string('email')->unique();
