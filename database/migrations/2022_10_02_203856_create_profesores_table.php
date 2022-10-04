@@ -17,12 +17,12 @@ return new class extends Migration
             $table->id();
             $table->timestamps();
             $table->integer('legajo')->unique();
-            $table->string('nombre');
+            $table->string('name');
             $table->string('apellido');
             $table->integer('DNI')->unique();
             $table->string('email')->unique();
             $table->integer('celular');
-            $table->string('contrasenia');
+            $table->string('password');
         });
     }
 

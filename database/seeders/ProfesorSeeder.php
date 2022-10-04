@@ -19,11 +19,15 @@ class ProfesorSeeder extends Seeder
     {
         $data = [
             [
+                'legajo' => '125609',
                 'name' => 'Juan',
+                'apellido' => 'Perez',
+                'DNI' => '42567890',
                 'email' => 'juan@hotmail.com',
+                'celular' => '23926525',
                 'password' => Hash::make('123'),
             ],
     ];
-    DB::table('profesors')->insert($data);
+    DB::table('profesores')->insert($data);
     }
 }
