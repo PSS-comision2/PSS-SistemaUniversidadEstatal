@@ -40,7 +40,7 @@
         </div>
     </div>
     <div class="navbar-center">
-        <a class="btn btn-outline btn-success normal-case text-2xl">Universidad Estatal</a>
+        <a class="btn btn-primary normal-case text-2xl">Universidad Estatal</a>
     </div>
     <div class="navbar-end ">
         <ul class="menu menu-horizontal p-0">
