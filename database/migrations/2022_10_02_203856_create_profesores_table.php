@@ -23,6 +23,7 @@ return new class extends Migration
             $table->string('email')->unique();
             $table->integer('celular');
             $table->string('password');
+            $table->rememberToken();
         });
     }
 
