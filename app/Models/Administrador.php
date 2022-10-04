@@ -12,15 +12,4 @@ class Administrador extends Authenticatable
     use HasFactory, Notifiable;
 
     protected $table = "administradores";
-    /**
-     * The attributes that are mass assignable.
-     *
-     * @var array
-     */
-    protected $fillable = [
-        'name',
-        'email',
-        'password',
-    ];
-
 }
