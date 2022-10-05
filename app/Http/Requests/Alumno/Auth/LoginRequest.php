@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Requests\Alumno\Auth;
+namespace App\Http\Requests\alumno\Auth;
 
 use Illuminate\Auth\Events\Lockout;
 use Illuminate\Foundation\Http\FormRequest;
@@ -29,7 +29,7 @@ class LoginRequest extends FormRequest
     public function rules()
     {
         return [
-            'email' => 'required|string|email',
+            'LU' => 'required|integer',
             'password' => 'required|string',
         ];
     }
@@ -45,11 +45,11 @@ class LoginRequest extends FormRequest
     {
         $this->ensureIsNotRateLimited();
 
-        if (! Auth::guard('alumno')->attempt($this->only('email', 'password'), $this->filled('remember'))) {
+        if (! Auth::guard('alumno')->attempt($this->only('LU', 'password'), $this->filled('remember'))) {
             RateLimiter::hit($this->throttleKey());
 
             throw ValidationException::withMessages([
-                'email' => __('auth.failed'),
+                'LU' => __('auth.failed'),
             ]);
         }
 
@@ -74,7 +74,7 @@ class LoginRequest extends FormRequest
         $seconds = RateLimiter::availableIn($this->throttleKey());
 
         throw ValidationException::withMessages([
-            'email' => trans('auth.throttle', [
+            'LU' => trans('auth.throttle', [
                 'seconds' => $seconds,
                 'minutes' => ceil($seconds / 60),
             ]),
@@ -88,6 +88,6 @@ class LoginRequest extends FormRequest
      */
     public function throttleKey()
     {
-        return Str::lower($this->input('email')).'|'.$this->ip().'|alumno';
+        return Str::lower($this->input('LU')).'|'.$this->ip().'|alumno';
     }
 }
