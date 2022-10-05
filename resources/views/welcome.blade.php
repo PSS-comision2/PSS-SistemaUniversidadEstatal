@@ -16,7 +16,7 @@
         <div class="hero-content flex-col lg:flex-row">
           <div>
             <h1 class="text-5xl font-bold">Universidad Estatal</h1>
-            <p class="py-6">Bienvenid@ al sistemad de la Universidad Estatal. <br> ¿Qué rol tiene dentro de la universidad?</p>
+            <p class="py-6">Bienvenid@ al sistema de la Universidad Estatal. <br> ¿Qué rol tiene dentro de la universidad?</p>
             <a href="/alumno" class="mx-2 btn btn-primary">Soy Alumno</a>
             <a href="/profesor" class="mx-2 btn btn-primary">Soy Profesor</a>
             <a href="/administrador" class="mx-2 btn btn-primary">Soy Administrador</a>
