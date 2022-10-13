@@ -11,11 +11,13 @@
                         </svg>
                     </a>
                     <ul class="p-2 bg-base-100">
-                        <li><a>Operacion 1</a></li>
-                        <li><a>Operacion 2</a></li>
-                        <li><a>Operacion 3</a></li>
-                        <li><a>Operacion 4</a></li>
-                        <li><a>Operacion 5</a></li>
+                        <li><a>Cargar carrera</a></li>
+                        <li><a>Cargar materia</a></li>
+                        <li><a>Cargar correlativa</a></li>
+                        <li><a>Cargar alumno</a></li>
+                        <li><a>Cargar profesor</a></li>
+                        <li><a>Cargar mesa</a></li>
+                        <li><a>Asociar materia a carrera</a></li>
                     </ul>
                 </li>
             </ul>
