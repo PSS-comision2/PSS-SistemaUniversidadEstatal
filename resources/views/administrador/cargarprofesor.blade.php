@@ -13,7 +13,7 @@
 <body>
     @include('administrador.layouts.navbar')
 
-    <form action="/administrador" method="POST">
+    <form action="/administrador/cargarprofesor" method="POST">
         @csrf
             <div class="mb-3">
                 <label for="" class="form-label">Nombre</label>

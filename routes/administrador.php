@@ -36,6 +36,10 @@ Route::prefix('administrador')->name('administrador.')->group(function () {
         ->middleware('auth:administrador')
         ->name('cargarprofesor');
 
+    Route::post('/cargarprofesor', [ProfesorController::class, 'store'])
+        ->middleware('auth:administrador')
+        ->name('cargarprofesor');
+
     Route::get('/cargaralumno', [AlumnoController::class, 'create'])
         ->middleware('auth:administrador')
         ->name('cargaralumno');

@@ -4,6 +4,9 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
+use App\Models\Profesor;
+use Illuminate\Support\Facades\DB;
+
 class ProfesorController extends Controller
 {
     /**
@@ -13,7 +16,7 @@ class ProfesorController extends Controller
      */
     public function index()
     {
-        //
+        return view('administrador.dashboard');
     }
 
     /**
@@ -34,7 +37,25 @@ class ProfesorController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'legajo' => 'required|max:35',
+            'nombre' => 'required|max:255',
+            'apellido' => 'required|max:255',
+            'dni' => 'required|max:35',
+            'email' => 'required|max:255',
+            'celular' => 'required|max:255',
+        ]);
+        $profesores = new Profesor();
+        $profesores->legajo = $request->get('legajo');
+        $profesores->nombre = $request->get('nombre');
+        $profesores->apellido = $request->get('apellido');
+        $profesores->DNI = $request->get('dni');
+        $profesores->email = $request->get('email');
+        $profesores->celular = $request->get('celular');
+
+        $profesores->save();
+
+        return redirect('/administrador');
     }
 
     /**
