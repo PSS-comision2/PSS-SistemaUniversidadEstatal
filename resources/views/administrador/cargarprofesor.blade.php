@@ -41,7 +41,7 @@
                 </div>
                 <div class="my-3">
                     <label class="label"><span class="label-text">Email</span> </label>
-                    <input id="email" name="email" type="text" class="input input-bordered w-full"
+                    <input id="email" name="email" type="email" class="input input-bordered w-full"
                         tabindex="5" required value="{{ old('email') }}" placeholder="Ingrese el email">
                 </div>
                 <div class="my-3">
