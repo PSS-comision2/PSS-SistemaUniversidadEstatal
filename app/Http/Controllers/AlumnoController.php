@@ -4,6 +4,9 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
+use App\Models\Alumno;
+use Illuminate\Support\Facades\DB;
+
 class AlumnoController extends Controller
 {
     /**
@@ -34,7 +37,25 @@ class AlumnoController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'legajo' => 'required|max:35',
+            'nombre' => 'required|max:255',
+            'apellido' => 'required|max:255',
+            'dni' => 'required|max:35',
+            'email' => 'required|max:255',
+            'celular' => 'required|max:255',
+        ]);
+        $alumnos = new Alumno();
+        $alumnos->LU = $request->get('legajo');
+        $alumnos->nombre = $request->get('nombre');
+        $alumnos->apellido = $request->get('apellido');
+        $alumnos->DNI = $request->get('dni');
+        $alumnos->email = $request->get('email');
+        $alumnos->celular = $request->get('celular');
+
+        $alumnos->save();
+
+        return redirect('/administrador');
     }
 
     /**

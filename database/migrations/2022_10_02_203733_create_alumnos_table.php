@@ -22,7 +22,7 @@ return new class extends Migration
             $table->bigInteger('DNI')->unique();
             $table->string('email')->unique();
             $table->bigInteger('celular');
-            $table->string('password');
+            $table->string('password')->nullable();
             $table->rememberToken();
         });
     }
