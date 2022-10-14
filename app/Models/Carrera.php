@@ -10,10 +10,9 @@ class Carrera extends Model
     use HasFactory;
 
     protected $table = "carreras";
-    protected $primaryKey = "legajo";
-    public $timestamps = false; 
+    public $timestamps = false;
 
     public function carrera_materia() {
-        return $this->belongsToMany(Materia::class, 'tiene', 'legajo', 'codigo');
+        return $this->belongsToMany(Materia::class, 'tiene', 'id_carrera', 'codigo');
     }
 }

@@ -16,10 +16,10 @@ return new class extends Migration
         Schema::create('tiene', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
-            $table->integer('legajo_carrera');
+            $table->integer('id_carrera');
             $table->integer('codigo_materia');
-            $table->foreign('legajo_carrera')->references('legajo')->on('carreras')->onUpdate('cascade')->onDelete('cascade'); 
-            $table->foreign('codigo_materia')->references('codigo')->on('materias')->onUpdate('cascade')->onDelete('cascade'); 
+            $table->foreign('id_carrera')->references('id')->on('carreras')->onUpdate('cascade')->onDelete('cascade');
+            $table->foreign('codigo_materia')->references('codigo')->on('materias')->onUpdate('cascade')->onDelete('cascade');
         });
     }
 
