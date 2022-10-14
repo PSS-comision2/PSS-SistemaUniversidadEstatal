@@ -4,6 +4,9 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
+use App\Models\Carrera;
+use Illuminate\Support\Facades\DB;
+
 class CarreraController extends Controller
 {
     /**
@@ -34,7 +37,19 @@ class CarreraController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'nombre' => 'required|max:255',
+            'plan' => 'required|max:255',
+            'depto' => 'required|max:35',
+        ]);
+        $carreras = new Carrera();
+        $carreras->nombre = $request->get('nombre');
+        $carreras->numero_plan = $request->get('plan');
+        $carreras->departamento = $request->get('depto');
+
+        $carreras->save();
+
+        return redirect('/administrador');
     }
 
     /**

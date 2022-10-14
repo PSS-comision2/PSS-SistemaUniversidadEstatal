@@ -4,6 +4,9 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
+use App\Models\Materia;
+use Illuminate\Support\Facades\DB;
+
 class MateriaController extends Controller
 {
     /**
@@ -34,7 +37,19 @@ class MateriaController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'codigo' => 'required|max:35',
+            'nombre' => 'required|max:255',
+            'plan' => 'required|max:255',
+        ]);
+        $materias = new Materia();
+        $materias->codigo = $request->get('codigo');
+        $materias->nombre = $request->get('nombre');
+        $materias->plan_pdf = $request->get('plan');
+
+        $materias->save();
+
+        return redirect('/administrador');
     }
 
     /**

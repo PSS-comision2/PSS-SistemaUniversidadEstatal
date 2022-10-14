@@ -28,7 +28,15 @@ Route::prefix('administrador')->name('administrador.')->group(function () {
         ->middleware('auth:administrador')
         ->name('cargarcarrera');
 
+    Route::post('/cargarcarrera', [CarreraController::class, 'store'])
+        ->middleware('auth:administrador')
+        ->name('cargarcarrera');
+
     Route::get('/cargarmateria', [MateriaController::class, 'create'])
+        ->middleware('auth:administrador')
+        ->name('cargarmateria');
+
+    Route::post('/cargarmateria', [MateriaController::class, 'store'])
         ->middleware('auth:administrador')
         ->name('cargarmateria');
 
