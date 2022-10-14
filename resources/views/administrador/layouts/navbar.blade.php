@@ -11,11 +11,11 @@
                         </svg>
                     </a>
                     <ul class="p-2 bg-base-100">
-                        <li><a>Cargar carrera</a></li>
-                        <li><a>Cargar materia</a></li>
+                        <li><a href="/administrador/cargarcarrera">Cargar carrera</a></li>
+                        <li><a href="/administrador/cargarmateria">Cargar materia</a></li>
                         <li><a>Cargar correlativa</a></li>
-                        <li><a>Cargar alumno</a></li>
-                        <li><a>Cargar profesor</a></li>
+                        <li><a href="/administrador/cargaralumno">Cargar alumno</a></li>
+                        <li><a href="/administrador/cargarprofesor">Cargar profesor</a></li>
                         <li><a>Cargar mesa</a></li>
                         <li><a>Asociar materia a carrera</a></li>
                     </ul>
