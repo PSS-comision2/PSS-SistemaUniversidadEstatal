@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
 use App\Models\Profesor;
-use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Hash;
 
 class ProfesorController extends Controller
 {
@@ -52,6 +52,7 @@ class ProfesorController extends Controller
         $profesores->DNI = $request->get('dni');
         $profesores->email = $request->get('email');
         $profesores->celular = $request->get('celular');
+        $profesores->password =  Hash::make($request->get('legajo'));
 
         $profesores->save();
 

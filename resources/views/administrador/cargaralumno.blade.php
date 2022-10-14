@@ -34,9 +34,9 @@
                         tabindex="3" required value="{{ old('dni') }}" placeholder="Ingrese el DNI">
                 </div>
                 <div class="my-3">
-                    <label class="label"><span class="label-text">Legajo</span> </label>
-                    <input id="legajo" name="legajo" type="number" min="1" class="input input-bordered w-full"
-                        tabindex="4" required value="{{ old('legajo') }}" placeholder="Ingrese el legajo">
+                    <label class="label"><span class="label-text">LU</span> </label>
+                    <input id="lu" name="lu" type="number" min="1" class="input input-bordered w-full"
+                        tabindex="4" required value="{{ old('lu') }}" placeholder="Ingrese el LU">
                 </div>
                 <div class="my-3">
                     <label class="label"><span class="label-text">Email</span> </label>

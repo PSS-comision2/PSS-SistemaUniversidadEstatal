@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
 use App\Models\Alumno;
-use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Hash;
 
 class AlumnoController extends Controller
 {
@@ -38,7 +38,7 @@ class AlumnoController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'legajo' => 'required|max:35',
+            'lu' => 'required|max:35',
             'nombre' => 'required|max:255',
             'apellido' => 'required|max:255',
             'dni' => 'required|max:35',
@@ -46,12 +46,13 @@ class AlumnoController extends Controller
             'celular' => 'required|max:255',
         ]);
         $alumnos = new Alumno();
-        $alumnos->LU = $request->get('legajo');
+        $alumnos->LU = $request->get('lu');
         $alumnos->nombre = $request->get('nombre');
         $alumnos->apellido = $request->get('apellido');
         $alumnos->DNI = $request->get('dni');
         $alumnos->email = $request->get('email');
         $alumnos->celular = $request->get('celular');
+        $alumnos->password =  Hash::make($request->get('lu'));
 
         $alumnos->save();
 
