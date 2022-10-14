@@ -31,15 +31,18 @@
                 </div>
                 <div class="my-3">
                     <label class="label"><span class="label-text">Profesor</span></label>
-                    <label class="label"><span class="label-text">TO-DO: Traer profesores - Lista desplegable con busqueda</span></label>
-                    <input id="profesor" name="profesor" type="text" class="input input-bordered w-full"
-                        tabindex="3" required value="{{ old('profesor') }}" placeholder="Ingrese el profesor">
+                    <select class="select select-bordered w-full" name="profesor" id="profesor">
+                        @foreach ($profesores as $profesor)
+                            <option value={{ $profesor->legajo }}> {{ $profesor->apellido }} {{ $profesor->nombre }} - LU:
+                                {{ $profesor->legajo }}</option>
+                        @endforeach
+                    </select>
+
                 </div>
                 <div class="my-3">
                     <label class="label"><span class="label-text">Plan de materia (PDF)</span></label>
-                    <label class="label"><span class="label-text">TO-DO: Validar solo pdf</span></label>
                     <input id="plan" name="plan" type="file" class="" tabindex="4"
-                        value="{{ old('plan') }}">
+                        value="{{ old('plan') }}" accept="application/pdf">
                 </div>
 
                 <a href="/administrador" class="btn btn-danger" tabindex="5">Cancelar</a>

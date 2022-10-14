@@ -2,9 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Dicta;
 use Illuminate\Http\Request;
 
 use App\Models\Materia;
+use App\Models\Profesor;
 use Illuminate\Support\Facades\DB;
 
 class MateriaController extends Controller
@@ -26,7 +28,8 @@ class MateriaController extends Controller
      */
     public function create()
     {
-        return view('administrador.cargarmateria');
+        $profesores = Profesor::orderBy("apellido")->get();
+        return view('administrador.cargarmateria')->with('profesores', $profesores);
     }
 
     /**
@@ -41,13 +44,20 @@ class MateriaController extends Controller
             'codigo' => 'required|max:35',
             'nombre' => 'required|max:255',
             'plan' => 'required|max:255',
+            'profesor' => 'required|max:255',
         ]);
         $materias = new Materia();
-        $materias->codigo = $request->get('codigo');
+        $materias->id = $request->get('codigo');
         $materias->nombre = $request->get('nombre');
         $materias->plan_pdf = $request->get('plan');
 
         $materias->save();
+
+        $dicta = new Dicta();
+        $dicta->id_materia = $request->get('codigo');
+        $dicta->legajo = $request->get('profesor');
+
+        $dicta ->save();
 
         return redirect('/administrador');
     }

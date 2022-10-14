@@ -10,16 +10,15 @@ class Materia extends Model
     use HasFactory;
 
     protected $table = "materias";
-    protected $primaryKey = "codigo";
-    public $timestamps = false; 
+    public $timestamps = false;
 
     public function correlativaaprobadas() {
-        return $this->belongsToMany(Materia::class, 'correlativaaprobadas', 'codigo', 'codigo');
+        return $this->belongsToMany(Materia::class, 'correlativaaprobadas', 'id', 'id');
     }
 
     public function correlativacursadas() {
-        return $this->belongsToMany(Materia::class, 'correlativacursadas', 'codigo', 'codigo');
+        return $this->belongsToMany(Materia::class, 'correlativacursadas', 'id', 'id');
     }
 
-    
+
 }

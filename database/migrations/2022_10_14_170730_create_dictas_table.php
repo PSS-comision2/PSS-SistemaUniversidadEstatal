@@ -13,12 +13,12 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('tiene', function (Blueprint $table) {
+        Schema::create('dicta', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
-            $table->integer('id_carrera');
+            $table->integer('legajo');
             $table->integer('id_materia');
-            $table->foreign('id_carrera')->references('id')->on('carreras')->onUpdate('cascade')->onDelete('cascade');
+            $table->foreign('legajo')->references('legajo')->on('profesores')->onUpdate('cascade')->onDelete('cascade');
             $table->foreign('id_materia')->references('id')->on('materias')->onUpdate('cascade')->onDelete('cascade');
         });
     }
@@ -30,6 +30,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('tiene');
+        Schema::dropIfExists('dicta');
     }
 };
