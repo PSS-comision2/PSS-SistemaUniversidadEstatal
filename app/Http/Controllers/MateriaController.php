@@ -41,10 +41,10 @@ class MateriaController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'codigo' => 'required|max:35',
-            'nombre' => 'required|max:255',
-            'plan' => 'required|max:255',
-            'profesor' => 'required|max:255',
+            'codigo' => 'required|integer',
+            'nombre' => 'required|max:255|string',
+            'plan' => 'required|max:255|string',
+            'profesor' => 'required|integer',
         ]);
         $materias = new Materia();
         $materias->id = $request->get('codigo');

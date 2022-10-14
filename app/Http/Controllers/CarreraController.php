@@ -38,9 +38,9 @@ class CarreraController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'nombre' => 'required|max:255',
-            'plan' => 'required|max:255',
-            'depto' => 'required|max:35',
+            'nombre' => 'required|max:255|string',
+            'plan' => 'required|integer',
+            'depto' => 'required|max:255|string',
         ]);
         $carreras = new Carrera();
         $carreras->nombre = $request->get('nombre');

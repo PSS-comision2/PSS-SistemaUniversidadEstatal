@@ -38,12 +38,12 @@ class AlumnoController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'lu' => 'required|max:35',
-            'nombre' => 'required|max:255',
-            'apellido' => 'required|max:255',
-            'dni' => 'required|max:35',
-            'email' => 'required|max:255',
-            'celular' => 'required|max:255',
+            'lu' => 'required|integer',
+            'nombre' => 'required|max:255|string',
+            'apellido' => 'required|max:255|string',
+            'dni' => 'required|integer',
+            'email' => 'required|max:255|string',
+            'celular' => 'required|integer',
         ]);
         $alumnos = new Alumno();
         $alumnos->LU = $request->get('lu');
