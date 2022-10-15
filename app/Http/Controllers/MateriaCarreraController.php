@@ -43,7 +43,7 @@ class MateriaCarreraController extends Controller
         $materia_carrera->id_carrera = $request->get('carrera');
         $materia_carrera->id_materia = $request->get('materia');
 
-        $final->save();
+        $materia_carrera->save();
 
         return redirect('/administrador')->with('estado','La materia fue añadida correctamente');
     }

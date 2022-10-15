@@ -15,7 +15,7 @@
     @include('administrador.layouts.navbar')
 
     <div class="card bg-base-100 shadow-xl max-w-xl mx-auto mt-12">
-        <form action="/administrador/cargarexamenfinal" method="POST">
+        <form action="/administrador/cargarmateriacarrera" method="POST">
             @csrf
             <div class="mx-5 my-5">
                 <h2 class="card-title mx-auto">Cargar una materia a una carrera</h2>
