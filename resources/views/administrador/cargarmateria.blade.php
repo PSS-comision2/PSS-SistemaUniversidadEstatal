@@ -42,7 +42,7 @@
                 <div class="my-3">
                     <label class="label"><span class="label-text">Plan de materia (PDF)</span></label>
                     <input id="plan" name="plan" type="file" class="" tabindex="4"
-                        value="{{ old('plan') }}" accept="application/pdf">
+                        value="{{ old('plan') }}" accept="application/pdf" required>
                 </div>
 
                 <a href="/administrador" class="btn btn-danger" tabindex="5">Cancelar</a>
