@@ -7,6 +7,7 @@ use App\Http\Controllers\MateriaController;
 use App\Http\Controllers\AlumnoController;
 use App\Http\Controllers\ProfesorController;
 use App\Http\Controllers\ExamenFinalController;
+use App\Http\Controllers\MateriaCarreraController;
 use Illuminate\Support\Facades\Route;
 
 Route::prefix('administrador')->name('administrador.')->group(function () {
@@ -57,6 +58,14 @@ Route::prefix('administrador')->name('administrador.')->group(function () {
     Route::post('/cargarexamenfinal', [ExamenFinalController::class, 'store'])
         ->middleware('auth:administrador')
         ->name('cargarexamenfinal');
+
+    Route::get('/cargarmateriacarrera', [MateriaCarreraController::class, 'create'])
+        ->middleware('auth:administrador')
+        ->name('cargarmateriacarrera');
+
+    Route::post('/cargarmateriacarrera', [MateriaCarreraController::class, 'store'])
+        ->middleware('auth:administrador')
+        ->name('cargarmateriacarrera');
 
     Route::get('/login', [AuthenticatedSessionController::class, 'create'])
         ->middleware('guest:administrador')
