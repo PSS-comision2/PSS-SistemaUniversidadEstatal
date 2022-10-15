@@ -31,7 +31,7 @@
                 </div>
                 <div class="my-3">
                     <label class="label"><span class="label-text">Profesor</span></label>
-                    <select class="select select-bordered w-full" name="profesor" id="profesor">
+                    <select class="select select-bordered w-full" name="profesor" id="profesor" tabindex="3">
                         @foreach ($profesores as $profesor)
                             <option value={{ $profesor->legajo }}> {{ $profesor->apellido }} {{ $profesor->nombre }} - LU:
                                 {{ $profesor->legajo }}</option>
