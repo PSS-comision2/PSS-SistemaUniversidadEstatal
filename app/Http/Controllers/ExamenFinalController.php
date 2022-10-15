@@ -56,7 +56,7 @@ class ExamenFinalController extends Controller
         $final->id_profesor = $request->get('profesor');
         $final->save();
 
-        return redirect('/administrador');
+        return redirect('/administrador')->with('estado','La mesa de examen fue creada correctamente.');
     }
 
     /**

@@ -49,7 +49,7 @@ class CarreraController extends Controller
 
         $carreras->save();
 
-        return redirect('/administrador');
+        return redirect('/administrador')->with('estado','La carrera fue creada correctamente.');
     }
 
     /**

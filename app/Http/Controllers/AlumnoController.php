@@ -56,7 +56,7 @@ class AlumnoController extends Controller
 
         $alumnos->save();
 
-        return redirect('/administrador');
+        return redirect('/administrador')->with('estado','El alumno fue creado correctamente.');
     }
 
     /**

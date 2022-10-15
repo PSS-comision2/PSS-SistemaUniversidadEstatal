@@ -56,7 +56,7 @@ class ProfesorController extends Controller
 
         $profesores->save();
 
-        return redirect('/administrador');
+        return redirect('/administrador')->with('estado','El profesor fue creado correctamente.');
     }
 
     /**

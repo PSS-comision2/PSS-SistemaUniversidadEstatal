@@ -59,7 +59,7 @@ class MateriaController extends Controller
 
         $dicta ->save();
 
-        return redirect('/administrador');
+        return redirect('/administrador')->with('estado','La materia fue creada correctamente.');
     }
 
     /**
