@@ -1,18 +1,12 @@
 <?php
 
 use App\Http\Controllers\Administrador\Auth\AuthenticatedSessionController;
-use App\Http\Controllers\Administrador\Auth\ConfirmablePasswordController;
-use App\Http\Controllers\Administrador\Auth\EmailVerificationNotificationController;
-use App\Http\Controllers\Administrador\Auth\EmailVerificationPromptController;
-use App\Http\Controllers\Administrador\Auth\NewPasswordController;
-use App\Http\Controllers\Administrador\Auth\PasswordResetLinkController;
-use App\Http\Controllers\Administrador\Auth\RegisteredUserController;
-use App\Http\Controllers\Administrador\Auth\VerifyEmailController;
 use App\Http\Controllers\Administrador\DashboardController;
 use App\Http\Controllers\CarreraController;
 use App\Http\Controllers\MateriaController;
 use App\Http\Controllers\AlumnoController;
 use App\Http\Controllers\ProfesorController;
+use App\Http\Controllers\ExamenFinalController;
 use Illuminate\Support\Facades\Route;
 
 Route::prefix('administrador')->name('administrador.')->group(function () {
@@ -55,6 +49,14 @@ Route::prefix('administrador')->name('administrador.')->group(function () {
     Route::post('/cargaralumno', [AlumnoController::class, 'store'])
         ->middleware('auth:administrador')
         ->name('cargaralumno');
+
+    Route::get('/cargarexamenfinal', [ExamenFinalController::class, 'create'])
+        ->middleware('auth:administrador')
+        ->name('cargarexamenfinal');
+
+    Route::post('/cargarexamenfinal', [ExamenFinalController::class, 'store'])
+        ->middleware('auth:administrador')
+        ->name('cargarexamenfinal');
 
     Route::get('/login', [AuthenticatedSessionController::class, 'create'])
         ->middleware('guest:administrador')

@@ -9,7 +9,6 @@ class ExamenFinal extends Model
 {
     use HasFactory;
 
-    protected $table = "examenfinales";
-    protected $primaryKey = "codigo_final";
-    public $timestamps = false; 
+    protected $table = "examenes_finales";
+    public $timestamps = false;
 }

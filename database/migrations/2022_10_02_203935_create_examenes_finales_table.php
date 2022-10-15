@@ -16,9 +16,13 @@ return new class extends Migration
         Schema::create('examenes_finales', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
-            $table->integer('codigo')->unique();
             $table->date('fecha');
             $table->time('hora');
+            $table->string('ubicacion');
+            $table->integer('id_profesor');
+            $table->integer('id_materia');
+            $table->foreign('id_profesor')->references('id')->on('profesores')->onUpdate('cascade')->onDelete('cascade');
+            $table->foreign('id_materia')->references('id')->on('materias')->onUpdate('cascade')->onDelete('cascade');
         });
     }
 

@@ -18,9 +18,9 @@ return new class extends Migration
             $table->timestamps();
             $table->integer('nota');
             $table->integer('LU_alumno');
-            $table->integer('codigo_final');
-            $table->foreign('LU_alumno')->references('LU')->on('alumnos')->onUpdate('cascade')->onDelete('cascade'); 
-            $table->foreign('codigo_final')->references('codigo')->on('examenes_finales')->onUpdate('cascade')->onDelete('cascade'); 
+            $table->integer('id_final');
+            $table->foreign('LU_alumno')->references('LU')->on('alumnos')->onUpdate('cascade')->onDelete('cascade');
+            $table->foreign('id_final')->references('id')->on('examenes_finales')->onUpdate('cascade')->onDelete('cascade');
         });
     }
 

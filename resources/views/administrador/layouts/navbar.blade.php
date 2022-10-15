@@ -16,7 +16,7 @@
                         <li><a>Cargar correlativa</a></li>
                         <li><a href="/administrador/cargaralumno">Cargar alumno</a></li>
                         <li><a href="/administrador/cargarprofesor">Cargar profesor</a></li>
-                        <li><a>Cargar mesa</a></li>
+                        <li><a href="/administrador/cargarexamenfinal">Cargar mesa</a></li>
                         <li><a>Asociar materia a carrera</a></li>
                     </ul>
                 </li>
