@@ -25,7 +25,6 @@
                     <select class="select select-bordered w-full" name="carrera" id="carrera" tabindex="2">
                         @foreach ($carreras as $carrera)
                             <option value={{ $carrera->id }}> {{ $carrera->nombre }} -
-                                Departamento:
                                 {{ $carrera->departamento }}</option>
                         @endforeach
                     </select>
