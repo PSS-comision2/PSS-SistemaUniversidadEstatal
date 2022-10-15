@@ -33,7 +33,8 @@
                     <label class="label"><span class="label-text">Profesor</span></label>
                     <select class="select select-bordered w-full" name="profesor" id="profesor" tabindex="3">
                         @foreach ($profesores as $profesor)
-                            <option value={{ $profesor->legajo }}> {{ $profesor->apellido }} {{ $profesor->nombre }} - LU:
+                            <option value={{ $profesor->legajo }}> {{ $profesor->apellido }} {{ $profesor->nombre }} -
+                                LU:
                                 {{ $profesor->legajo }}</option>
                         @endforeach
                     </select>
@@ -45,8 +46,10 @@
                         value="{{ old('plan') }}" accept="application/pdf" required>
                 </div>
 
-                <a href="/administrador" class="btn btn-danger" tabindex="5">Cancelar</a>
-                <button type="submit" class="btn btn-success" tabindex="6">Guardar</button>
+                <div class="grid grid-cols-2 gap-4 content-center mt-10">
+                    <a href="/administrador" class="btn btn-secondary" tabindex="5">Cancelar</a>
+                    <button type="submit" class="btn btn-success" tabindex="6">Guardar</button>
+                </div>
             </div>
         </form>
     </div>
