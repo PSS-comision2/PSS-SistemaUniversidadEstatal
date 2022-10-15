@@ -12,15 +12,6 @@
 </head>
 
 <body>
-    @if ($errors->any())
-    <div class="alert alert-danger">
-        <ul>
-            @foreach ($errors->all() as $error)
-                <li>{{ $error }}</li>
-            @endforeach
-        </ul>
-    </div>
-@endif
     @include('administrador.layouts.navbar')
 
     <div class="card bg-base-100 shadow-xl max-w-xl mx-auto mt-12">
