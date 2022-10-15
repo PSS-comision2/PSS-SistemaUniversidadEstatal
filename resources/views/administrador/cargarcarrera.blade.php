@@ -25,7 +25,7 @@
                 </div>
                 <div class="my-3">
                     <label class="label"><span class="label-text">Numero de plan</span> </label>
-                    <input id="plan" name="plan" type="text" class="input input-bordered w-full"
+                    <input id="plan" name="plan" type="number" min="1" class="input input-bordered w-full"
                         tabindex="2" required value="{{ old('plan') }}" placeholder="Ingrese el numero de plan">
                 </div>
                 <div class="my-3">
