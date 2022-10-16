@@ -25,12 +25,15 @@
             @method("PUT")
             <div class="mx-5 my-5">
                 <h2 class="card-title mx-auto">Correlativas para {{$materia->nombre}}</h2>
-
                 <div class="my-3">
                     <label class="label"><span class="label-text">Débil</span></label>
                     <select class="select select-bordered w-full js-example-basic-multiple" name="materias_debiles[]" multiple="multiple">
                         @foreach ($materias as $materia_actual)
-                            <option value={{ $materia_actual->materia->id }}> {{ $materia_actual->materia->nombre }}
+                            @if($correlativas_debiles->contains('id_correlativa_debil', $materia_actual->materia->id))
+                                <option value={{ $materia_actual->materia->id }} selected> {{ $materia_actual->materia->nombre }}
+                            @else
+                                <option value={{ $materia_actual->materia->id }}> {{ $materia_actual->materia->nombre }}
+                            @endif
                         @endforeach
                     </select>
                 </div>

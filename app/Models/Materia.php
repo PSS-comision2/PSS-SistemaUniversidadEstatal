@@ -13,11 +13,11 @@ class Materia extends Model
     public $timestamps = false;
 
     public function correlativaaprobadas() {
-        return $this->belongsToMany(Materia::class, 'correlativaaprobadas', 'id', 'id');
+        return $this->belongsToMany(Materia::class, 'correlativa_aprobadas', 'id', 'id');
     }
 
     public function correlativacursadas() {
-        return $this->belongsToMany(Materia::class, 'correlativacursadas', 'id', 'id');
+        return $this->belongsToMany(Materia::class, 'correlativa_cursadas', 'id', 'id');
     }
 
 
