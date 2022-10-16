@@ -105,7 +105,6 @@ class ExamenFinalController extends Controller
 
         foreach((array) $LUs as $LU){
             $alumno_rinde = Rinde::all()->where('id_final',$id)->where('LU_alumno',$LU)->first();
-            Log::alert($alumno_rinde);
             $alumno_rinde->nota = $notas[$indice++];
             $alumno_rinde->save();
         }

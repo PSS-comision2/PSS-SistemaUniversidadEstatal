@@ -11,4 +11,8 @@ class MateriaCarrera extends Model
 
     protected $table = "tiene";
     public $timestamps = false;
+
+    public function materia() {
+        return $this->belongsTo(Materia::class, 'id_materia', 'id');
+    }
 }

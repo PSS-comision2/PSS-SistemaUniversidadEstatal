@@ -9,6 +9,6 @@ class CorrelativaCursada extends Model
 {
     use HasFactory;
 
-    protected $table = "correlativacursadas";
-    public $timestamps = false ; 
+    protected $table = "correlativa_cursadas";
+    public $timestamps = false ;
 }

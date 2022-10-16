@@ -33,7 +33,7 @@
                         <th>{{$carrera->nombre}}</th>
                         <th>{{$materia->nombre}}</th>
                         <th>{{$materia -> id}}</th>
-                        <th><a href="/administrador/cargarcorrelativas/{{$carrera->id}}" class="btn btn-active btn-accent text-md">Correlativas</a></th>
+                        <th><a href="/administrador/cargarcorrelativas/{{$carrera->id}}/{{$materia->id}}" class="btn btn-active btn-accent text-md">Correlativas</a></th>
                     </tr>
                   @endforeach
                 @endforeach

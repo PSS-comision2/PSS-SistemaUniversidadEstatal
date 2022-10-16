@@ -4,7 +4,10 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Carrera;
+use App\Models\Materia;
 use App\Models\MateriaCarrera;
+use App\Models\CorrelativaCursada;
+use App\Models\CorrelativaAprobada;
 
 class MateriaCorrelativaController extends Controller
 {
@@ -57,12 +60,13 @@ class MateriaCorrelativaController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit($id,$id_materia)
     {
         $carrera = Carrera::find($id);
-        $materias = MateriaCarrera::all()->where('id_carrera',$id);
+        $materia = Materia::find($id_materia);
+        $materias = MateriaCarrera::all()->where('id_carrera',$id)->where('id_materia','!=',$id_materia);
 
-        return view('administrador.cargarcorrelativas')->with('materias',$materias)->with('carrera',$carrera);
+        return view('administrador.cargarcorrelativas')->with('materias',$materias)->with('carrera',$carrera)->with('materia', $materia);
     }
 
     /**
@@ -72,9 +76,31 @@ class MateriaCorrelativaController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, $id_materia, $id_carrera)
     {
-        //
+        $fuertes = $request->input('materias_fuertes');
+        $indice = 0;
+
+        foreach((array) $fuertes as $fuerte){
+            $correlativa = new CorrelativaAprobada();
+            $correlativa-> id_correlativa_fuerte = $fuerte;
+            $correlativa-> id_materia = $id_materia;
+            $correlativa-> id_carrera = $id_carrera;
+            $correlativa->save();
+        }
+
+        $debiles = $request->input('materias_debiles');
+        $indice = 0;
+
+        foreach((array) $debiles as $debil){
+            $correlativa = new CorrelativaCursada();
+            $correlativa-> id_correlativa_debil = $debil;
+            $correlativa-> id_materia = $id_materia;
+            $correlativa-> id_carrera = $id_carrera;
+            $correlativa->save();
+        }
+
+        return redirect('/administrador')->with('estado','Se cargaron las correlativas correctamente.');
     }
 
     /**

@@ -23,6 +23,14 @@ class MateriaSeeder extends Seeder
                 'plan_pdf' => 'plan_PSS.pdf',
             ],
             [
+                'nombre' => 'Ingenieria en Aplicaciones Web',
+                'plan_pdf' => 'plan_IAW.pdf',
+            ],
+            [
+                'nombre' => 'Sistemas Operativos',
+                'plan_pdf' => 'plan_SO.pdf',
+            ],
+            [
                 'nombre' => 'Matematica II',
                 'plan_pdf' => 'plan_matematica.pdf',
             ],

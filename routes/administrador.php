@@ -72,11 +72,11 @@ Route::prefix('administrador')->name('administrador.')->group(function () {
         ->middleware('auth:administrador')
         ->name('materiacorrelativa');
 
-    Route::get('/cargarcorrelativas/{id}', [MateriaCorrelativaController::class, 'edit'])
+    Route::get('/cargarcorrelativas/{id}/{id_materia}', [MateriaCorrelativaController::class, 'edit'])
         ->middleware('auth:administrador')
         ->name('cargarcorrelativas');
 
-    Route::put('/cargarcorrelativas/{id}', [MateriaCorrelativaController::class, 'update'])
+    Route::put('/cargarcorrelativas/{id}/{id_materia}', [MateriaCorrelativaController::class, 'update'])
         ->middleware('auth:administrador')
         ->name('cargarcorrelativas');
 

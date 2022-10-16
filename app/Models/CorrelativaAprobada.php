@@ -9,6 +9,6 @@ class CorrelativaAprobada extends Model
 {
     use HasFactory;
 
-    protected $table = "correlativaaprobadas";
-    public $timestamps = false; 
+    protected $table = "correlativa_aprobadas";
+    public $timestamps = false;
 }
