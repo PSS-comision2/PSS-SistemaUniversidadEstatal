@@ -14,10 +14,9 @@ return new class extends Migration
     public function up()
     {
         Schema::create('tiene', function (Blueprint $table) {
-            $table->id();
             $table->timestamps();
-            $table->integer('id_carrera');
-            $table->integer('id_materia');
+            $table->integer('id_carrera')->unique();
+            $table->integer('id_materia')->unique();
             $table->foreign('id_carrera')->references('id')->on('carreras')->onUpdate('cascade')->onDelete('cascade');
             $table->foreign('id_materia')->references('id')->on('materias')->onUpdate('cascade')->onDelete('cascade');
         });
