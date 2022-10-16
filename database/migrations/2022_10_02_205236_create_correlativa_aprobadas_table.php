@@ -15,10 +15,10 @@ return new class extends Migration
     {
         Schema::create('correlativa_aprobadas', function (Blueprint $table) {
             $table->id();
-            $table->id_correlativa_fuerte();
-            $table->id_materia();
-            $table->id_correlativa_fuerte()->references('id')->on('materias')->onUpdate('cascade')->onDelete('cascade');
-            $table->id_materia()->references('id')->on('materias')->onUpdate('cascade')->onDelete('cascade');
+            $table->integer('id_correlativa_fuerte');
+            $table->integer('id_materia');
+            $table->foreign('id_correlativa_fuerte')->references('id')->on('materias')->onUpdate('cascade')->onDelete('cascade');
+            $table->foreign('id_materia')->references('id')->on('materias')->onUpdate('cascade')->onDelete('cascade');
             $table->timestamps();
         });
     }
