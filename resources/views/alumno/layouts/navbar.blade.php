@@ -10,7 +10,7 @@
                             <path d="M7.41,8.58L12,13.17L16.59,8.58L18,10L12,16L6,10L7.41,8.58Z" />
                         </svg>
                     </a>
-                    <ul class="p-2 bg-base-100">
+                    <ul class="p-2 bg-base-100 z-50">
                         <li><a>Operacion 1</a></li>
                         <li><a>Operacion 2</a></li>
                         <li><a>Operacion 3</a></li>
@@ -30,7 +30,7 @@
                             <path d="M7.41,8.58L12,13.17L16.59,8.58L18,10L12,16L6,10L7.41,8.58Z" />
                         </svg>
                     </a>
-                    <ul class="p-2 bg-base-100">
+                    <ul class="p-2 bg-base-100 z-50">
                         <li><a>Consulta 1</a></li>
                         <li><a>Consulta 2</a></li>
                         <li><a>Consulta 3</a></li>
