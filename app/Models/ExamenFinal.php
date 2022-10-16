@@ -11,4 +11,9 @@ class ExamenFinal extends Model
 
     protected $table = "examenes_finales";
     public $timestamps = false;
+
+    public function materia() {
+        return $this->belongsTo(Materia::class, 'id_materia', 'id');
+    }
+
 }

@@ -11,11 +11,8 @@
                         </svg>
                     </a>
                     <ul class="p-2 bg-base-100">
-                        <li><a>Operacion 1</a></li>
-                        <li><a>Operacion 2</a></li>
-                        <li><a>Operacion 3</a></li>
-                        <li><a>Operacion 4</a></li>
-                        <li><a>Operacion 5</a></li>
+                        <li><a>Cargar notas de cursado</a></li>
+                        <li><a href="/profesor/finales">Cargar notas de final</a></li>
                     </ul>
                 </li>
             </ul>
@@ -55,8 +52,7 @@
                 <ul class="btn btn-outline">
                     <li>
                         <form id="logout-form" action="{{ route('profesor.logout') }}" method="POST">
-                            <a href="javascript:;" class=""
-                                onclick="document.getElementById('logout-form').submit();">
+                            <a onclick="document.getElementById('logout-form').submit();">
                                 <span class=" ">Cerrar sesión</span>
                             </a>
                             @csrf

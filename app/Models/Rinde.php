@@ -10,5 +10,9 @@ class Rinde extends Model
     use HasFactory;
 
     protected $table = "rinde";
-    public $timestamps = false; 
+    public $timestamps = false;
+
+    public function alumno() {
+        return $this->belongsTo(Alumno::class,  'LU_alumno', 'LU');
+    }
 }

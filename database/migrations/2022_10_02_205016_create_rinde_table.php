@@ -16,7 +16,7 @@ return new class extends Migration
         Schema::create('rinde', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
-            $table->integer('nota');
+            $table->integer('nota')->nullable();
             $table->integer('LU_alumno');
             $table->integer('id_final');
             $table->foreign('LU_alumno')->references('LU')->on('alumnos')->onUpdate('cascade')->onDelete('cascade');

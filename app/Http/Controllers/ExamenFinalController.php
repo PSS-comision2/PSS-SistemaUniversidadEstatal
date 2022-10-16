@@ -5,7 +5,10 @@ namespace App\Http\Controllers;
 use App\Models\ExamenFinal;
 use App\Models\Materia;
 use App\Models\Profesor;
+use App\Models\Rinde;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Log;
+use Auth;
 
 
 class ExamenFinalController extends Controller
@@ -17,7 +20,9 @@ class ExamenFinalController extends Controller
      */
     public function index()
     {
-        //
+        $id_profesor = Auth::user()->id;
+        $finales = ExamenFinal::orderBy("fecha", "DESC")->get()->where('id_profesor', $id_profesor);
+        return view('profesor.finales')->with('finales',$finales);
     }
 
     /**
@@ -79,7 +84,10 @@ class ExamenFinalController extends Controller
      */
     public function edit($id)
     {
-        //
+        $final = ExamenFinal::find($id);
+        $alumnos_rinden = Rinde::all()->where('id_final',$id);
+
+        return view('profesor.notas')->with('final',$final)->with('alumnos_rinden',$alumnos_rinden);
     }
 
     /**
@@ -91,7 +99,18 @@ class ExamenFinalController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $notas = $request->input('notas');
+        $LUs = $request->input('LUs');
+        $indice = 0;
+
+        foreach((array) $LUs as $LU){
+            $alumno_rinde = Rinde::all()->where('id_final',$id)->where('LU_alumno',$LU)->first();
+            Log::alert($alumno_rinde);
+            $alumno_rinde->nota = $notas[$indice++];
+            $alumno_rinde->save();
+        }
+
+        return redirect('/profesor')->with('estado','Se cargaron las notas correctamente.');
     }
 
     /**
