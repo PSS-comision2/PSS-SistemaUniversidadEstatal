@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Carrera;
+use App\Models\MateriaCarrera;
 
 class MateriaCorrelativaController extends Controller
 {
@@ -57,7 +59,10 @@ class MateriaCorrelativaController extends Controller
      */
     public function edit($id)
     {
-        //
+        $carrera = Carrera::find($id);
+        $materias = MateriaCarrera::all()->where('id_carrera',$id);
+
+        return view('administrador.cargarcorrelativas')->with('materias',$materias)->with('carrera',$carrera);
     }
 
     /**

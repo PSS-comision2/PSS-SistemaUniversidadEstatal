@@ -13,6 +13,6 @@ class Carrera extends Model
     public $timestamps = false;
 
     public function carrera_materia() {
-        return $this->belongsToMany(Materia::class, 'tiene', 'id_carrera', 'codigo');
+        return $this->belongsToMany(Materia::class, 'tiene', 'id_carrera', 'id');
     }
 }

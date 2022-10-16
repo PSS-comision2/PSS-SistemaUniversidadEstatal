@@ -8,6 +8,7 @@ use App\Http\Controllers\AlumnoController;
 use App\Http\Controllers\ProfesorController;
 use App\Http\Controllers\ExamenFinalController;
 use App\Http\Controllers\MateriaCarreraController;
+use App\Http\Controllers\MateriaCorrelativaController;
 use Illuminate\Support\Facades\Route;
 
 Route::prefix('administrador')->name('administrador.')->group(function () {
@@ -70,6 +71,14 @@ Route::prefix('administrador')->name('administrador.')->group(function () {
     Route::get('/materiacorrelativa', [MateriaCorrelativaController::class, 'index'])
         ->middleware('auth:administrador')
         ->name('materiacorrelativa');
+
+    Route::get('/cargarcorrelativas/{id}', [MateriaCorrelativaController::class, 'edit'])
+        ->middleware('auth:administrador')
+        ->name('cargarcorrelativas');
+
+    Route::put('/cargarcorrelativas/{id}', [MateriaCorrelativaController::class, 'update'])
+        ->middleware('auth:administrador')
+        ->name('cargarcorrelativas');
 
     Route::get('/login', [AuthenticatedSessionController::class, 'create'])
         ->middleware('guest:administrador')
