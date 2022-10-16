@@ -42,7 +42,11 @@
                     <label class="label"><span class="label-text">Fuerte</span></label>
                     <select class="select select-bordered w-full js-example-basic-multiple" name="materias_fuertes[]" multiple="multiple">
                         @foreach ($materias as $materia_actual)
-                            <option value={{ $materia_actual->materia->id }}> {{ $materia_actual->materia->nombre }}
+                            @if($correlativas_fuertes->contains('id_correlativa_fuerte', $materia_actual->materia->id))
+                                <option value={{ $materia_actual->materia->id }} selected> {{ $materia_actual->materia->nombre }}
+                            @else
+                                <option value={{ $materia_actual->materia->id }}> {{ $materia_actual->materia->nombre }}
+                            @endif
                         @endforeach
                     </select>
                 </div>
