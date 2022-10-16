@@ -67,6 +67,10 @@ Route::prefix('administrador')->name('administrador.')->group(function () {
         ->middleware('auth:administrador')
         ->name('cargarmateriacarrera');
 
+    Route::get('/materiacorrelativa', [MateriaCorrelativaController::class, 'index'])
+        ->middleware('auth:administrador')
+        ->name('materiacorrelativa');
+
     Route::get('/login', [AuthenticatedSessionController::class, 'create'])
         ->middleware('guest:administrador')
         ->name('login');

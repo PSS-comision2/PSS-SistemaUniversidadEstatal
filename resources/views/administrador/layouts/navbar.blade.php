@@ -13,7 +13,7 @@
                     <ul class="p-2 bg-base-100">
                         <li><a href="/administrador/cargarcarrera">Cargar carrera</a></li>
                         <li><a href="/administrador/cargarmateria">Cargar materia</a></li>
-                        <li><a>Cargar correlativa</a></li>
+                        <li><a href = "/administrador/materiacorrelativa">Cargar correlativa</a></li>
                         <li><a href="/administrador/cargaralumno">Cargar alumno</a></li>
                         <li><a href="/administrador/cargarprofesor">Cargar profesor</a></li>
                         <li><a href="/administrador/cargarexamenfinal">Cargar mesa</a></li>
