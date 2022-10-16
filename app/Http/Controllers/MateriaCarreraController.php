@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 use App\Models\Materia;
 use App\Models\Carrera;
 use App\Models\MateriaCarrera;
+use Illuminate\Support\Facades\Log;
+use PhpParser\Node\Stmt\TryCatch;
 
 class MateriaCarreraController extends Controller
 {
@@ -39,13 +41,18 @@ class MateriaCarreraController extends Controller
      */
     public function store(Request $request)
     {
-        $materia_carrera = new MateriaCarrera();
-        $materia_carrera->id_carrera = $request->get('carrera');
-        $materia_carrera->id_materia = $request->get('materia');
+        try{
+            $materia_carrera = new MateriaCarrera();
+            $materia_carrera->id_carrera = $request->get('carrera');
+            $materia_carrera->id_materia = $request->get('materia');
 
-        $materia_carrera->save();
+            $materia_carrera->save();
 
-        return redirect('/administrador')->with('estado','La materia fue añadida correctamente');
+            return redirect('/administrador')->with('estado','La materia fue añadida correctamente');
+        }catch(\Exception $e){
+            return redirect('/administrador')->with('warning','La materia ya estaba asociada a la carrera');
+        }
+
     }
 
     /**
