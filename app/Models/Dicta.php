@@ -11,4 +11,9 @@ class Dicta extends Model
 
     protected $table = "dicta";
     public $timestamps = false;
+
+    public function materia() {
+        return $this->belongsTo(Materia::class,  'id_materia', 'id');
+    }
+
 }

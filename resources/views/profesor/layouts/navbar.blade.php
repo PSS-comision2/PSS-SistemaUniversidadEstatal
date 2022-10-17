@@ -11,7 +11,7 @@
                         </svg>
                     </a>
                     <ul class="p-2 bg-base-100 z-50">
-                        <li><a>Cargar notas de cursado</a></li>
+                        <li><a href="/profesor/cursados">Cargar notas de cursado</a></li>
                         <li><a href="/profesor/finales">Cargar notas de final</a></li>
                     </ul>
                 </li>

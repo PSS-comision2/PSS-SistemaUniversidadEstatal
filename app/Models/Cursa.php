@@ -10,5 +10,9 @@ class Cursa extends Model
     use HasFactory;
 
     protected $table = "cursadas";
-    public $timestamps = false; 
+    public $timestamps = false;
+
+    public function alumno() {
+        return $this->belongsTo(Alumno::class,  'LU_alumno', 'LU');
+    }
 }
