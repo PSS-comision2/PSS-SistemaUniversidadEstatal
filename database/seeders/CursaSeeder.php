@@ -28,6 +28,11 @@ class CursaSeeder extends Seeder
                 'LU_alumno' => '116853',
                 'id_materia' => '3',
             ],
+            [
+                'fecha_inicio' => '16/03/2021',
+                'LU_alumno' => '127589',
+                'id_materia' => '3',
+            ],
 
     ];
 

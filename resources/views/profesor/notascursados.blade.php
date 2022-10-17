@@ -16,7 +16,7 @@
     <div class="card bg-base-100 shadow-2xl max-w-5xl mx-auto mt-12">
         <h2 class="card-title mx-auto">Cursado de {{ $materia->nombre }} </h2>
         <div class="overflow-x-auto">
-            <form action="/profesor/cargarnotascursado/{{ $materia->id }}" method="POST">
+            <form action="/profesor/cargarnotascursados/{{ $materia->id }}" method="POST">
                 @csrf
                 @method('PUT')
                 <table class="table w-full mx-15">
@@ -25,20 +25,34 @@
                             <th>LU</th>
                             <th>Apellido</th>
                             <th>Nombre</th>
-                            <th>Nota</th>
+                            <th>Estado</th>
                         </tr>
                     </thead>
                     <tbody class="text-center">
                         @foreach ($alumnos_cursan as $alumno_cursa)
                             <tr>
-                                <th><input id="lus" name="LUs[]" type="text" class="text-center bg-base-100" readonly value="{{$alumno_cursa->alumno->LU}}"></th>
+                                <th><input id="lus" name="LUs[]" type="text" class="text-center bg-base-100"
+                                        readonly value="{{ $alumno_cursa->alumno->LU }}"></th>
                                 </th>
                                 <th>{{ $alumno_cursa->alumno->apellido }}</th>
                                 <th>{{ $alumno_cursa->alumno->nombre }}</th>
-                                TODO: implementar el checkbox
-                                <th><input type="checkbox" name="notas[]" value="Aprobado"> Aprobado <br/>
-                                <input type="checkbox" name="notas[]" value="Desaprobado"> Desaprobado <br/>
-                                <input type="checkbox" name="notas[]" value="Ausente"> Ausente <br/></th>
+                                <th>
+                                    <select class="select select-bordered w-full" name="estados[]" id="estado"
+                                        tabindex="{{ $loop->index + 1 }}">
+                                        <option value="sindefinir"
+                                            {{ is_null($alumno_cursa->nota) ? 'selected' : '' }}> Sin definir
+                                        </option>
+                                        <option value="Aprobado"
+                                            {{ $alumno_cursa->nota === 'Aprobado' ? 'selected' : '' }}> Aprobado
+                                        </option>
+                                        <option value="Desaprobado"
+                                            {{ $alumno_cursa->nota === 'Desaprobado' ? 'selected' : '' }}> Desaprobado
+                                        </option>
+                                        <option value="Ausente"
+                                            {{ $alumno_cursa->nota === 'Ausente' ? 'selected' : '' }}> Ausente
+                                        </option>
+                                    </select>
+                                </th>
                             </tr>
                         @endforeach
                     </tbody>
