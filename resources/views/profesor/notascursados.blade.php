@@ -35,10 +35,11 @@
                                 </th>
                                 <th>{{ $alumno_cursa->alumno->apellido }}</th>
                                 <th>{{ $alumno_cursa->alumno->nombre }}</th>
-                                TODO: implementar el checkbox
-                                <th><input type="checkbox" name="notas[]" value="Aprobado"> Aprobado <br/>
-                                <input type="checkbox" name="notas[]" value="Desaprobado"> Desaprobado <br/>
-                                <input type="checkbox" name="notas[]" value="Ausente"> Ausente <br/></th>
+                                <th><select class="select select-bordered w-full" name="notas[]" id="nota">
+                                        <option value='Aprobado'> Aprobado </option>
+                                        <option value='Desaprobado'> Desaprobado </option>
+                                        <option value='Ausente'> Ausente </option>
+                                </select></th>
                             </tr>
                         @endforeach
                     </tbody>

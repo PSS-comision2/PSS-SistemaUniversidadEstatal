@@ -44,7 +44,7 @@ class CursadosController extends Controller
      */
     public function store(Request $request)
     {
-        //
+       //
     }
 
     /**
@@ -81,7 +81,17 @@ class CursadosController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $notas = $request->input('notas');
+        $LUs = $request->input('LUs');
+        $indice = 0;
+
+        foreach((array) $LUs as $LU){
+            $alumno_cursa = Cursa::all()->where('id_materia',$id)->where('LU_alumno',$LU)->first();
+            $alumno_cursa->nota = $notas[$indice++];
+            $alumno_cursa->save();
+        }
+
+        return redirect('/profesor')->with('estado','Se cargaron las notas de cursado correctamente.');
     }
 
     /**
