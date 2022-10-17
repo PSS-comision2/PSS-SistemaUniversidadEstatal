@@ -81,17 +81,21 @@ class CursadosController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $notas = $request->input('notas');
+        $estados = $request->input('estados');
         $LUs = $request->input('LUs');
         $indice = 0;
 
         foreach((array) $LUs as $LU){
             $alumno_cursa = Cursa::all()->where('id_materia',$id)->where('LU_alumno',$LU)->first();
-            $alumno_cursa->nota = $notas[$indice++];
+            if($estados[$indice] === 'sindefinir')
+                $alumno_cursa->nota = null;
+            else
+                $alumno_cursa->nota = $estados[$indice];
+            $indice++;
             $alumno_cursa->save();
         }
 
-        return redirect('/profesor')->with('estado','Se cargaron las notas de cursado correctamente.');
+        return redirect('/profesor')->with('estado','Se cargaron las notas correctamente.');
     }
 
     /**

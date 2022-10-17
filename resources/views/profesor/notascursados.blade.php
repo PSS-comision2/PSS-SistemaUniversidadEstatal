@@ -25,21 +25,34 @@
                             <th>LU</th>
                             <th>Apellido</th>
                             <th>Nombre</th>
-                            <th>Nota</th>
+                            <th>Estado</th>
                         </tr>
                     </thead>
                     <tbody class="text-center">
                         @foreach ($alumnos_cursan as $alumno_cursa)
                             <tr>
-                                <th><input id="lus" name="LUs[]" type="text" class="text-center bg-base-100" readonly value="{{$alumno_cursa->alumno->LU}}"></th>
+                                <th><input id="lus" name="LUs[]" type="text" class="text-center bg-base-100"
+                                        readonly value="{{ $alumno_cursa->alumno->LU }}"></th>
                                 </th>
                                 <th>{{ $alumno_cursa->alumno->apellido }}</th>
                                 <th>{{ $alumno_cursa->alumno->nombre }}</th>
-                                <th><select class="select select-bordered w-full" name="notas[]" id="nota">
-                                        <option value='Aprobado'> Aprobado </option>
-                                        <option value='Desaprobado'> Desaprobado </option>
-                                        <option value='Ausente'> Ausente </option>
-                                </select></th>
+                                <th>
+                                    <select class="select select-bordered w-full" name="estados[]" id="estado"
+                                        tabindex="{{ $loop->index + 1 }}">
+                                        <option value="sindefinir"
+                                            {{ is_null($alumno_cursa->nota) ? 'selected' : '' }}> Sin definir
+                                        </option>
+                                        <option value="Aprobado"
+                                            {{ $alumno_cursa->nota === 'Aprobado' ? 'selected' : '' }}> Aprobado
+                                        </option>
+                                        <option value="Desaprobado"
+                                            {{ $alumno_cursa->nota === 'Desaprobado' ? 'selected' : '' }}> Desaprobado
+                                        </option>
+                                        <option value="Ausente"
+                                            {{ $alumno_cursa->nota === 'Ausente' ? 'selected' : '' }}> Ausente
+                                        </option>
+                                    </select>
+                                </th>
                             </tr>
                         @endforeach
                     </tbody>
