@@ -16,7 +16,7 @@
     <div class="card bg-base-100 shadow-2xl max-w-5xl mx-auto mt-12">
         <h2 class="card-title mx-auto">Cursado de {{ $materia->nombre }} </h2>
         <div class="overflow-x-auto">
-            <form action="/profesor/cargarnotascursado/{{ $materia->id }}" method="POST">
+            <form action="/profesor/cargarnotascursados/{{ $materia->id }}" method="POST">
                 @csrf
                 @method('PUT')
                 <table class="table w-full mx-15">
