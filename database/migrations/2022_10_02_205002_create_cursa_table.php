@@ -17,6 +17,7 @@ return new class extends Migration
             $table->id();
             $table->timestamps();
             $table->date('fecha_inicio');
+            $table->enum('nota', ['Aprobado', 'Desaprobado', 'Ausente'])->nullable();
             $table->integer('LU_alumno');
             $table->integer('id_materia');
             $table->foreign('LU_alumno')->references('LU')->on('alumnos')->onUpdate('cascade')->onDelete('cascade');
