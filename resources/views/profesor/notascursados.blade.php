@@ -35,7 +35,10 @@
                                 </th>
                                 <th>{{ $alumno_cursa->alumno->apellido }}</th>
                                 <th>{{ $alumno_cursa->alumno->nombre }}</th>
-                                <th><input id="nota" name="notas[]" type="number" class="input input-bordered text-center" min="0" tabindex="{{ $loop->index+1}}" value="{{$alumno_cursa->nota}}"></th>
+                                TODO: implementar el checkbox
+                                <th><input type="checkbox" name="notas[]" value="Aprobado"> Aprobado <br/>
+                                <input type="checkbox" name="notas[]" value="Desaprobado"> Desaprobado <br/>
+                                <input type="checkbox" name="notas[]" value="Ausente"> Ausente <br/></th>
                             </tr>
                         @endforeach
                     </tbody>

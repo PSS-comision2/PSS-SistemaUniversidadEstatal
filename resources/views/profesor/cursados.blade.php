@@ -29,7 +29,7 @@
                     <tr>
                         <th>{{$materia->id_materia}}</th>
                         <th>{{$materia->materia->nombre}}</th>
-                        <th><a href="/profesor/cargarnotascursado/{{$materia->id_materia}}" class="btn btn-secondary text-xl">+</a></th>
+                        <th><a href="/profesor/cargarnotascursados/{{$materia->id_materia}}" class="btn btn-secondary text-xl">+</a></th>
                     </tr>
                 @endforeach
               </tbody>

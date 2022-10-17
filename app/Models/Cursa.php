@@ -9,7 +9,7 @@ class Cursa extends Model
 {
     use HasFactory;
 
-    protected $table = "cursadas";
+    protected $table = "cursa";
     public $timestamps = false;
 
     public function alumno() {
