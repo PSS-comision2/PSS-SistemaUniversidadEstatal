@@ -22,7 +22,7 @@
 
 
                 <div class="grid grid-cols-2 gap-4 content-center mt-10">
-                    <button type="submit" class="btn btn-success" tabindex="8">Inscribirme</button>                    
+                    <button type="submit" class="btn btn-success" tabindex="8">Inscribirme</button>
                     <a href="/alumno" class="btn btn-secondary " tabindex="7">Cancelar</a>
                 </div>
             </div>

@@ -6,7 +6,9 @@ use Illuminate\Http\Request;
 
 use App\Models\Alumno;
 use App\Models\Carrera;
+use App\Models\Inscripto;
 use Illuminate\Support\Facades\Hash;
+use Auth;
 
 class AlumnoController extends Controller
 {
@@ -106,10 +108,21 @@ class AlumnoController extends Controller
     }
 
     public function inscribir_alumno_carrera(){
-
-        $carreras = Carrera::all();
+        $LU = Auth::user()->LU;
+        $carrerasinscripto = Inscripto::all()->where('LU_alumno',$LU)->pluck('id_carrera')->toArray();
+        $carreras = Carrera::whereNotIn('id',$carrerasinscripto)->get();
 
         return view('alumno.inscribircarrera')->with('carreras', $carreras);
+    }
 
+    public function guardar_alumno_carrera(Request $request){
+        $inscripcion = new Inscripto();
+
+        $inscripcion->LU_alumno = Auth::user()->LU;
+        $inscripcion->id_carrera = $request->get('carrera');
+
+        $inscripcion->save();
+
+        return redirect('/alumno')->with('estado','La inscripción se realizó correctamente.');
     }
 }

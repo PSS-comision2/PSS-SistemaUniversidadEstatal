@@ -25,5 +25,6 @@ class DatabaseSeeder extends Seeder
         $this->call(RindeSeeder::class);
         $this->call(DictaSeeder::class);
         $this->call(CursaSeeder::class);
+        $this->call(InscriptoSeeder::class);
     }
 }
