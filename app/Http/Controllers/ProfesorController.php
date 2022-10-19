@@ -37,26 +37,30 @@ class ProfesorController extends Controller
      */
     public function store(Request $request)
     {
-        $request->validate([
-            'legajo' => 'required|numeric',
-            'nombre' => 'required|max:255|string',
-            'apellido' => 'required|max:255|string',
-            'dni' => 'required|numeric',
-            'email' => 'required|max:255|string',
-            'celular' => 'required|numeric',
-        ]);
-        $profesores = new Profesor();
-        $profesores->legajo = $request->get('legajo');
-        $profesores->nombre = $request->get('nombre');
-        $profesores->apellido = $request->get('apellido');
-        $profesores->DNI = $request->get('dni');
-        $profesores->email = $request->get('email');
-        $profesores->celular = $request->get('celular');
-        $profesores->password =  Hash::make($request->get('legajo'));
+        try{
+            $request->validate([
+                'legajo' => 'required|numeric',
+                'nombre' => 'required|max:255|string',
+                'apellido' => 'required|max:255|string',
+                'dni' => 'required|numeric',
+                'email' => 'required|max:255|string',
+                'celular' => 'required|numeric',
+            ]);
+            $profesores = new Profesor();
+            $profesores->legajo = $request->get('legajo');
+            $profesores->nombre = $request->get('nombre');
+            $profesores->apellido = $request->get('apellido');
+            $profesores->DNI = $request->get('dni');
+            $profesores->email = $request->get('email');
+            $profesores->celular = $request->get('celular');
+            $profesores->password =  Hash::make($request->get('legajo'));
 
-        $profesores->save();
+            $profesores->save();
 
-        return redirect('/administrador')->with('estado','El profesor fue creado correctamente.');
+            return redirect('/administrador')->with('estado','El profesor fue creado correctamente.');
+        }catch(\Exception $e){
+            return redirect('/administrador')->with('warning','Ya existe un prfesor con ese legajo');
+        }
     }
 
     /**

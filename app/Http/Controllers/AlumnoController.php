@@ -40,26 +40,30 @@ class AlumnoController extends Controller
      */
     public function store(Request $request)
     {
-        $request->validate([
-            'lu' => 'required|numeric',
-            'nombre' => 'required|max:255|string',
-            'apellido' => 'required|max:255|string',
-            'dni' => 'required|numeric',
-            'email' => 'required|max:255|string',
-            'celular' => 'required|numeric',
-        ]);
-        $alumnos = new Alumno();
-        $alumnos->LU = $request->get('lu');
-        $alumnos->nombre = $request->get('nombre');
-        $alumnos->apellido = $request->get('apellido');
-        $alumnos->DNI = $request->get('dni');
-        $alumnos->email = $request->get('email');
-        $alumnos->celular = $request->get('celular');
-        $alumnos->password =  Hash::make($request->get('lu'));
+        try{
+            $request->validate([
+                'lu' => 'required|numeric',
+                'nombre' => 'required|max:255|string',
+                'apellido' => 'required|max:255|string',
+                'dni' => 'required|numeric',
+                'email' => 'required|max:255|string',
+                'celular' => 'required|numeric',
+            ]);
+            $alumnos = new Alumno();
+            $alumnos->LU = $request->get('lu');
+            $alumnos->nombre = $request->get('nombre');
+            $alumnos->apellido = $request->get('apellido');
+            $alumnos->DNI = $request->get('dni');
+            $alumnos->email = $request->get('email');
+            $alumnos->celular = $request->get('celular');
+            $alumnos->password =  Hash::make($request->get('lu'));
 
-        $alumnos->save();
+            $alumnos->save();
 
-        return redirect('/administrador')->with('estado','El alumno fue creado correctamente.');
+            return redirect('/administrador')->with('estado','El alumno fue creado correctamente.');
+        }catch(\Exception $e){
+            return redirect('/administrador')->with('warning','Ya existe un alumno con ese LU');
+        }
     }
 
     /**
