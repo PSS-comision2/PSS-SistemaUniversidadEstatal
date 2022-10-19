@@ -24,7 +24,7 @@ Route::prefix('alumno')->name('alumno.')->group(function () {
         ->middleware('auth:alumno')
         ->name('inscribircursada');
 
-    Route::get('/inscribircarrera', [AlumnoController::class, 'inscribir_alumno_carrera'])
+    Route::post('/inscribircursada', [CursaController::class, 'guardar_alumno_materia'])
         ->middleware('auth:alumno')
         ->name('inscribircursada');
 
