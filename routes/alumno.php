@@ -1,15 +1,11 @@
 <?php
 
 use App\Http\Controllers\Alumno\Auth\AuthenticatedSessionController;
-use App\Http\Controllers\Alumno\Auth\ConfirmablePasswordController;
-use App\Http\Controllers\Alumno\Auth\EmailVerificationNotificationController;
-use App\Http\Controllers\Alumno\Auth\EmailVerificationPromptController;
-use App\Http\Controllers\Alumno\Auth\NewPasswordController;
-use App\Http\Controllers\Alumno\Auth\PasswordResetLinkController;
-use App\Http\Controllers\Alumno\Auth\RegisteredUserController;
-use App\Http\Controllers\Alumno\Auth\VerifyEmailController;
 use App\Http\Controllers\Alumno\DashboardController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\RindeController;
+use App\Http\Controllers\CursaController;
+use App\Http\Controllers\AlumnoController;
 
 Route::prefix('alumno')->name('alumno.')->group(function () {
 
@@ -19,6 +15,18 @@ Route::prefix('alumno')->name('alumno.')->group(function () {
     Route::get('/dashboard', [DashboardController::class, 'index'])
         ->middleware('auth:alumno')
         ->name('dashboard');
+
+    Route::get('/inscribirfinal', [RindeController::class, 'create'])
+        ->middleware('auth:alumno')
+        ->name('inscribirfinal');
+
+    Route::get('/inscribircursada', [CursaController::class, 'create'])
+        ->middleware('auth:alumno')
+        ->name('inscribircursada');
+
+    Route::get('/inscribircarrera', [AlumnoController::class, 'inscribir_alumno_carrera'])
+        ->middleware('auth:alumno')
+        ->name('inscribircursada');
 
     Route::get('/login', [AuthenticatedSessionController::class, 'create'])
         ->middleware('guest:alumno')

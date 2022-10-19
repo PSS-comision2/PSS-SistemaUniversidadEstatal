@@ -4,11 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-use App\Models\Alumno;
-use App\Models\Carrera;
-use Illuminate\Support\Facades\Hash;
-
-class AlumnoController extends Controller
+class CursaController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -27,7 +23,7 @@ class AlumnoController extends Controller
      */
     public function create()
     {
-        return view('administrador.cargaralumno');
+        return view('alumno.inscribircursada');
     }
 
     /**
@@ -38,26 +34,7 @@ class AlumnoController extends Controller
      */
     public function store(Request $request)
     {
-        $request->validate([
-            'lu' => 'required|integer',
-            'nombre' => 'required|max:255|string',
-            'apellido' => 'required|max:255|string',
-            'dni' => 'required|integer',
-            'email' => 'required|max:255|string',
-            'celular' => 'required|integer',
-        ]);
-        $alumnos = new Alumno();
-        $alumnos->LU = $request->get('lu');
-        $alumnos->nombre = $request->get('nombre');
-        $alumnos->apellido = $request->get('apellido');
-        $alumnos->DNI = $request->get('dni');
-        $alumnos->email = $request->get('email');
-        $alumnos->celular = $request->get('celular');
-        $alumnos->password =  Hash::make($request->get('lu'));
-
-        $alumnos->save();
-
-        return redirect('/administrador')->with('estado','El alumno fue creado correctamente.');
+        //
     }
 
     /**
@@ -103,13 +80,5 @@ class AlumnoController extends Controller
     public function destroy($id)
     {
         //
-    }
-
-    public function inscribir_alumno_carrera(){
-
-        $carreras = Carrera::all();
-
-        return view('alumno.inscribircarrera')->with('carreras', $carreras);
-
     }
 }
