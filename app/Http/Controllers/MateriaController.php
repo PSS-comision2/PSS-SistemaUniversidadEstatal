@@ -40,30 +40,26 @@ class MateriaController extends Controller
      */
     public function store(Request $request)
     {
-        try{
-            $request->validate([
-                'codigo' => 'required|integer',
-                'nombre' => 'required|max:255|string',
-                'plan' => 'required|max:255|string',
-                'profesor' => 'required|integer',
-            ]);
-            $materias = new Materia();
-            $materias->id = $request->get('codigo');
-            $materias->nombre = $request->get('nombre');
-            $materias->plan_pdf = $request->get('plan');
+        $request->validate([
+            'codigo' => 'required|numeric',
+            'nombre' => 'required|max:255|string',
+            'plan' => 'required|max:255|string',
+            'profesor' => 'required|numeric',
+        ]);
+        $materias = new Materia();
+        $materias->id = $request->get('codigo');
+        $materias->nombre = $request->get('nombre');
+        $materias->plan_pdf = $request->get('plan');
 
-            $materias->save();
+        $materias->save();
 
-            $dicta = new Dicta();
-            $dicta->id_materia = $request->get('codigo');
-            $dicta->legajo = $request->get('profesor');
+        $dicta = new Dicta();
+        $dicta->id_materia = $request->get('codigo');
+        $dicta->legajo = $request->get('profesor');
 
-            $dicta ->save();
+        $dicta ->save();
 
-            return redirect('/administrador')->with('estado','La materia fue creada correctamente.');
-        }catch(\Exception $e){
-            return redirect('/administrador')->with('warning','El código de materia ingresado ya existe');
-        }
+        return redirect('/administrador')->with('estado','La materia fue creada correctamente.');
     }
 
     /**

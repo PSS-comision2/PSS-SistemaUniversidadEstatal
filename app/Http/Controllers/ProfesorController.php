@@ -38,12 +38,12 @@ class ProfesorController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'legajo' => 'required|integer',
+            'legajo' => 'required|numeric',
             'nombre' => 'required|max:255|string',
             'apellido' => 'required|max:255|string',
-            'dni' => 'required|integer',
+            'dni' => 'required|numeric',
             'email' => 'required|max:255|string',
-            'celular' => 'required|integer',
+            'celular' => 'required|numeric',
         ]);
         $profesores = new Profesor();
         $profesores->legajo = $request->get('legajo');

@@ -39,7 +39,7 @@ class CarreraController extends Controller
     {
         $request->validate([
             'nombre' => 'required|max:255|string',
-            'plan' => 'required|integer',
+            'plan' => 'required|numeric',
             'depto' => 'required|max:255|string',
         ]);
         $carreras = new Carrera();
