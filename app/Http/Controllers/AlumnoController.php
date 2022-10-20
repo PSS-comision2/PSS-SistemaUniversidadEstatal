@@ -62,7 +62,7 @@ class AlumnoController extends Controller
 
             return redirect('/administrador')->with('estado','El alumno fue creado correctamente.');
         }catch(\Exception $e){
-            return redirect('/administrador')->with('warning','Ya existe un alumno con ese LU');
+            return redirect('/administrador')->with('warning','Ya existe un alumno con ese LU, DNI o email');
         }
     }
 
