@@ -5,7 +5,12 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
 use App\Models\Rinde;
+use App\Models\ExamenFinal;
+use App\Models\Alumno;
+use App\Models\Materia;
+use Auth;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Log;
 
 class RindeController extends Controller
 {
@@ -26,7 +31,30 @@ class RindeController extends Controller
      */
     public function create()
     {
-        return view('alumno.inscribirfinal');
+        $LU = Auth::user()->LU;
+        $finales_alumno = Rinde::all()->where('LU_alumno', $LU)->pluck('id_final')->toArray(); 
+        $finales_puede_rendir = ExamenFinal::whereIn('id', $finales_alumno)->get();
+        $finales_nombre = array();
+
+        foreach($finales_puede_rendir as $final_puede_rendir){
+            $id_en_examen = $final_puede_rendir->id_materia;
+            $id_materiaa = ExamenFinal::all()->where('id_materia', $id_en_examen)->pluck('id_materia')->first();
+            $materia = Materia::find($id_materiaa);
+            array_push($finales_nombre, $materia);  
+        }
+        return view('alumno.inscribirfinal')->with('finales_nombre', $finales_nombre);
+    }
+
+    public function guardar_alumno_final(Request $request){
+
+        $rinde = new Rinde();
+        $id_final = 
+        
+        $rinde->LU_alumno = Auth::user()->LU;
+        $rinde->id_final = $request->get('examenfinal');
+        $rinde->save();
+
+        return redirect('/alumno')->with('estado','La inscripción se realizó correctamente.');
     }
 
     /**

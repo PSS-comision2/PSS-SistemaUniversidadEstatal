@@ -20,6 +20,10 @@ Route::prefix('alumno')->name('alumno.')->group(function () {
         ->middleware('auth:alumno')
         ->name('inscribirfinal');
 
+    Route::post('/inscribirfinal', [RindeController::class, 'guardar_alumno_final'])
+    ->middleware('auth:alumno')
+    ->name('inscribirfinal'); 
+
     Route::get('/inscribircursada', [CursaController::class, 'create'])
         ->middleware('auth:alumno')
         ->name('inscribircursada');
