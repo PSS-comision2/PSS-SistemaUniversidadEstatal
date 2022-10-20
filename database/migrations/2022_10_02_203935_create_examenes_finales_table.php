@@ -19,7 +19,7 @@ return new class extends Migration
             $table->date('fecha');
             $table->time('hora');
             $table->string('ubicacion');
-            $table->string('observacion');
+            $table->string('observacion')->nullable();
             $table->integer('id_profesor');
             $table->integer('id_materia');
             $table->foreign('id_profesor')->references('id')->on('profesores')->onUpdate('cascade')->onDelete('cascade');

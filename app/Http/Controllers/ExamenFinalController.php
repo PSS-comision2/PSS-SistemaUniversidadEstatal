@@ -48,7 +48,7 @@ class ExamenFinalController extends Controller
         $request->validate([
             'fecha' => 'required|date',
             'hora' => 'required|date_format:H:i',
-            'observaciones' => 'string',
+            'observaciones' => 'string|nullable',
             'ubicacion' => 'required|string',
             'profesor' => 'required|string',
             'materia' => 'required|string',
