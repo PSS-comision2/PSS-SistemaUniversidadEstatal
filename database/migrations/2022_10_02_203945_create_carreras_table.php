@@ -16,7 +16,7 @@ return new class extends Migration
         Schema::create('carreras', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
-            $table->string('nombre');
+            $table->string('nombre')->unique();
             $table->integer('numero_plan');
             $table->string('departamento');
         });

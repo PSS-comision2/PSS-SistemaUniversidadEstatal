@@ -37,19 +37,23 @@ class CarreraController extends Controller
      */
     public function store(Request $request)
     {
-        $request->validate([
-            'nombre' => 'required|max:255|string',
-            'plan' => 'required|numeric',
-            'depto' => 'required|max:255|string',
-        ]);
-        $carreras = new Carrera();
-        $carreras->nombre = $request->get('nombre');
-        $carreras->numero_plan = $request->get('plan');
-        $carreras->departamento = $request->get('depto');
+        try{
+            $request->validate([
+                'nombre' => 'required|max:255|string',
+                'plan' => 'required|numeric',
+                'depto' => 'required|max:255|string',
+            ]);
+            $carreras = new Carrera();
+            $carreras->nombre = $request->get('nombre');
+            $carreras->numero_plan = $request->get('plan');
+            $carreras->departamento = $request->get('depto');
 
-        $carreras->save();
+            $carreras->save();
 
-        return redirect('/administrador')->with('estado','La carrera fue creada correctamente.');
+            return redirect('/administrador')->with('estado','La carrera fue creada correctamente.');
+        }catch(\Exception $e){
+            return redirect('/administrador')->with('warning','El nombre de la carrera ya se encuentra cargado');
+        }
     }
 
     /**
