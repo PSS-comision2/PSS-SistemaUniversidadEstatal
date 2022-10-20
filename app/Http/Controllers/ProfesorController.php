@@ -59,7 +59,7 @@ class ProfesorController extends Controller
 
             return redirect('/administrador')->with('estado','El profesor fue creado correctamente.');
         }catch(\Exception $e){
-            return redirect('/administrador')->with('warning','Ya existe un prfesor con ese legajo');
+            return redirect('/administrador')->with('warning','Ya existe un profesor con ese legajo, dni o email');
         }
     }
 
