@@ -19,17 +19,17 @@ class CursaSeeder extends Seeder
     {
         $data = [
             [
-                'fecha_inicio' => '16/03/2021',
+                'fecha_inicio' => '2021-08-08',
                 'LU_alumno' => '127589',
                 'id_materia' => '2',
             ],
             [
-                'fecha_inicio' => '16/03/2021',
+                'fecha_inicio' => '2021-02-17',
                 'LU_alumno' => '116853',
                 'id_materia' => '3',
             ],
             [
-                'fecha_inicio' => '16/03/2021',
+                'fecha_inicio' => '2021-08-23',
                 'LU_alumno' => '127589',
                 'id_materia' => '3',
             ],

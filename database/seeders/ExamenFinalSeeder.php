@@ -19,7 +19,7 @@ class ExamenFinalSeeder extends Seeder
     {
         $data = [
             [
-                'fecha' => '20-05-2022',
+                'fecha' => '2022-05-05',
                 'hora' => '19:00',
                 'ubicacion' => 'Complejo Alem',
                 'observacion' => '',
@@ -27,7 +27,7 @@ class ExamenFinalSeeder extends Seeder
                 'id_materia' => '3',
             ],
             [
-                'fecha' => '21-07-2022',
+                'fecha' => '2022-12-12',
                 'hora' => '20:00',
                 'ubicacion' => 'Palihue',
                 'observacion' => '',
