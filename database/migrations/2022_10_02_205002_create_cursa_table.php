@@ -16,7 +16,7 @@ return new class extends Migration
         Schema::create('cursa', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
-            $table->date('fecha_inicio');
+            $table->date('fecha_inicio')->nullable();
             $table->enum('nota', ['Aprobado', 'Desaprobado', 'Ausente'])->nullable();
             $table->integer('LU_alumno');
             $table->integer('id_materia');

@@ -20,17 +20,25 @@ Route::prefix('alumno')->name('alumno.')->group(function () {
         ->middleware('auth:alumno')
         ->name('inscribirfinal');
 
+    Route::post('/inscribirfinal', [RindeController::class, 'guardar_alumno_final'])
+    ->middleware('auth:alumno')
+    ->name('inscribirfinal'); 
+
     Route::get('/inscribircursada', [CursaController::class, 'create'])
         ->middleware('auth:alumno')
         ->name('inscribircursada');
 
-    Route::get('/inscribircarrera', [AlumnoController::class, 'inscribir_alumno_carrera'])
+    Route::post('/inscribircursada', [CursaController::class, 'guardar_alumno_materia'])
         ->middleware('auth:alumno')
         ->name('inscribircursada');
 
     Route::post('/guardarcarrera', [AlumnoController::class, 'guardar_alumno_carrera'])
         ->middleware('auth:alumno')
         ->name('guardarcarrera');
+
+    Route::get('/inscribircarrera', [AlumnoController::class, 'inscribir_alumno_carrera'])
+        ->middleware('auth:alumno')
+        ->name('inscribircursada');
 
     Route::get('/login', [AuthenticatedSessionController::class, 'create'])
         ->middleware('guest:alumno')

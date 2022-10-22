@@ -3,6 +3,10 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Cursa;
+use App\Models\Alumno;
+use App\Models\Materia;
+use Auth;
 
 class CursaController extends Controller
 {
@@ -23,9 +27,22 @@ class CursaController extends Controller
      */
     public function create()
     {
-        return view('alumno.inscribircursada');
+        $LU = Auth::user()->LU;
+        $materias_alumno = Cursa::all()->where('LU_alumno', $LU)->where('cursa','Aprobado')->pluck('id_materia')->toArray();
+        $materias_puede_anotarse = Materia::whereNotIn('id', $materias_alumno)->get();
+        return view('alumno.inscribircursada')->with('materias_puede_anotarse', $materias_puede_anotarse);
     }
 
+    public function guardar_alumno_materia(Request $request){
+        $cursa = new Cursa();
+
+        $cursa->LU_alumno = Auth::user()->LU;
+        $cursa->id_materia = $request->get('materia');
+
+        $cursa->save();
+
+        return redirect('/alumno')->with('estado','La inscripción se realizó correctamente.');
+    }
     /**
      * Store a newly created resource in storage.
      *

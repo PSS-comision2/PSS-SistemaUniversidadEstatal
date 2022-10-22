@@ -25,6 +25,7 @@ class ExamenFinalSeeder extends Seeder
                 'observacion' => '',
                 'id_profesor' => '3',
                 'id_materia' => '3',
+                'observacion' => 'Traer DNI.'
             ],
             [
                 'fecha' => '2022-12-12',
@@ -33,6 +34,7 @@ class ExamenFinalSeeder extends Seeder
                 'observacion' => '',
                 'id_profesor' => '3',
                 'id_materia' => '1',
+                'observacion' => 'Deben traer sus computadoras.'
             ],
 
     ];

@@ -10,6 +10,7 @@ class Materia extends Model
     use HasFactory;
 
     protected $table = "materias";
+    protected $primaryKey = "id";
     public $timestamps = false;
 
     public function correlativaaprobadas() {

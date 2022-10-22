@@ -10,6 +10,8 @@ class ExamenFinal extends Model
     use HasFactory;
 
     protected $table = "examenes_finales";
+    
+    protected $primaryKey = "id";
     public $timestamps = false;
 
     public function materia() {
