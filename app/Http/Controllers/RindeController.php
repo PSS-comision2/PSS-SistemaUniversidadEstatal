@@ -32,24 +32,21 @@ class RindeController extends Controller
     public function create()
     {
         $LU = Auth::user()->LU;
-        $finales_alumno = Rinde::all()->where('LU_alumno', $LU)->pluck('id_final')->toArray(); 
-        $finales_puede_rendir = ExamenFinal::whereIn('id', $finales_alumno)->get();
-        $finales_nombre = array();
+        $finales_alumno = Rinde::all()->where('LU_alumno', $LU)->where('nota','>','4')->pluck('id_final')->toArray();
+        $finales_puede_rendir = ExamenFinal::whereNotIn('id', $finales_alumno)->get();
+        $finales = array();
 
         foreach($finales_puede_rendir as $final_puede_rendir){
-            $id_en_examen = $final_puede_rendir->id_materia;
-            $id_materiaa = ExamenFinal::all()->where('id_materia', $id_en_examen)->pluck('id_materia')->first();
-            $materia = Materia::find($id_materiaa);
-            array_push($finales_nombre, $materia);  
+            array_push($finales, $final_puede_rendir);
         }
-        return view('alumno.inscribirfinal')->with('finales_nombre', $finales_nombre);
+
+        return view('alumno.inscribirfinal')->with('finales', $finales);
     }
 
     public function guardar_alumno_final(Request $request){
 
         $rinde = new Rinde();
-        $id_final = 
-        
+
         $rinde->LU_alumno = Auth::user()->LU;
         $rinde->id_final = $request->get('examenfinal');
         $rinde->save();
