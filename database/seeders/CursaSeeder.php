@@ -34,6 +34,12 @@ class CursaSeeder extends Seeder
                 'id_materia' => '3',
             ],
 
+            [
+                'fecha_inicio' => '16/03/2021',
+                'LU_alumno' => '116853',
+                'id_materia' => '6',
+            ],
+
     ];
 
     DB::table('cursa')->insert($data);

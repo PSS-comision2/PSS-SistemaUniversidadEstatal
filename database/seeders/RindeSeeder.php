@@ -27,6 +27,13 @@ class RindeSeeder extends Seeder
                 'id_final' => '1',
             ],
 
+            [
+                'LU_alumno' => '116853',
+                'id_final' => '3',
+            ],
+
+
+
     ];
 
     DB::table('rinde')->insert($data);

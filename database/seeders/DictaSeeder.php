@@ -27,6 +27,16 @@ class DictaSeeder extends Seeder
                 'id_materia' => '3',
             ],
 
+            [
+                'legajo' => '12345',
+                'id_materia' => '6',
+            ],
+
+            [
+                'legajo' => '67474',
+                'id_materia' => '1',
+            ],
+
     ];
 
     DB::table('dicta')->insert($data);

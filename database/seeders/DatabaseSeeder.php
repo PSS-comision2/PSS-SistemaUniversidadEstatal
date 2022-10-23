@@ -26,5 +26,10 @@ class DatabaseSeeder extends Seeder
         $this->call(DictaSeeder::class);
         $this->call(CursaSeeder::class);
         $this->call(InscriptoSeeder::class);
+        $this->call(TieneSeeder::class);
+        $this->call(CorrelativaCursadaSeeder::class);
+        $this->call(CorrelativaAprobadaSeeder::class);
+
+
     }
 }

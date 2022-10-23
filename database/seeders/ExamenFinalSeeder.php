@@ -37,6 +37,18 @@ class ExamenFinalSeeder extends Seeder
                 'observacion' => 'Deben traer sus computadoras.'
             ],
 
+            [
+                'fecha' => '23-10-2022',
+                'hora' => '08:00',
+                'ubicacion' => 'Palihue',
+                'observacion' => '',
+                'id_profesor' => '1',
+                'id_materia' => '6',
+                'observacion' => 'Coloquio - Pueden traer sus apuntes.'
+            ],
+
+
+
     ];
 
     DB::table('examenes_finales')->insert($data);
