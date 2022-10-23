@@ -47,8 +47,15 @@ class ExamenFinalSeeder extends Seeder
                 'observacion' => 'Coloquio - Pueden traer sus apuntes.'
             ],
 
-
-
+            [
+                'fecha' => '12-09-2022',
+                'hora' => '08:00',
+                'ubicacion' => 'Alem - Aula 13',
+                'observacion' => '',
+                'id_profesor' => '2',
+                'id_materia' => '3',
+                'observacion' => 'Presentarse 15 minutos antes.'
+            ],
     ];
 
     DB::table('examenes_finales')->insert($data);

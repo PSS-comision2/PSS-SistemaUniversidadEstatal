@@ -32,6 +32,13 @@ class RindeSeeder extends Seeder
                 'id_final' => '3',
             ],
 
+            [
+                'LU_alumno' => '106464',
+                'id_final' => '4',
+            ],
+
+
+
 
 
     ];

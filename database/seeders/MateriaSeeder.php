@@ -40,7 +40,7 @@ class MateriaSeeder extends Seeder
             ],
 
             [
-                'nombre' => 'Algoritmos y complejidad',
+                'nombre' => 'Algoritmos y Complejidad',
                 'plan_pdf' => 'plan_algoritmos.pdf',
             ],
     ];
