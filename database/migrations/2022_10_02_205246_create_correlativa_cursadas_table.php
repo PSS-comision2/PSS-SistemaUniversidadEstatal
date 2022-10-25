@@ -15,13 +15,14 @@ return new class extends Migration
     {
         Schema::create('correlativa_cursadas', function (Blueprint $table) {
             $table->id();
+            $table->timestamps();
             $table->integer('id_correlativa_debil');
             $table->integer('id_materia');
             $table->integer('id_carrera');
             $table->foreign('id_correlativa_debil')->references('id')->on('materias')->onUpdate('cascade')->onDelete('cascade');
             $table->foreign('id_materia')->references('id')->on('materias')->onUpdate('cascade')->onDelete('cascade');
             $table->foreign('id_carrera')->references('id')->on('carreras')->onUpdate('cascade')->onDelete('cascade');
-            $table->timestamps();
+        
         });
     }
 

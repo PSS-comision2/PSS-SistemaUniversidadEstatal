@@ -38,6 +38,11 @@ class MateriaSeeder extends Seeder
                 'nombre' => 'Contabilidad Basica',
                 'plan_pdf' => 'plan_contador.pdf',
             ],
+
+            [
+                'nombre' => 'Algoritmos y Complejidad',
+                'plan_pdf' => 'plan_algoritmos.pdf',
+            ],
     ];
     DB::table('materias')->insert($data);
     }
