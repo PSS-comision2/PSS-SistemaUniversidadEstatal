@@ -7,6 +7,7 @@ use App\Http\Controllers\RindeController;
 use App\Http\Controllers\CursaController;
 use App\Http\Controllers\AlumnoController;
 use App\Http\Controllers\CarreraController;
+use App\Http\Controllers\ExamenFinalController;
 
 Route::prefix('alumno')->name('alumno.')->group(function () {
 
@@ -44,6 +45,11 @@ Route::prefix('alumno')->name('alumno.')->group(function () {
     Route::get('/miscarreras', [CarreraController::class, 'mostrar_carreras_alumno'])
         ->middleware('auth:alumno')
         ->name('miscarreras');
+
+    Route::get('/misfinales', [ExamenFinalController::class, 'mostrar_finales_alumno'])
+        ->middleware('auth:alumno')
+        ->name('misfinales');
+
 
     Route::get('/login', [AuthenticatedSessionController::class, 'create'])
         ->middleware('guest:alumno')

@@ -15,4 +15,8 @@ class Rinde extends Model
     public function alumno() {
         return $this->belongsTo(Alumno::class,  'LU_alumno', 'LU');
     }
+
+    public function final() {
+        return $this->belongsTo(ExamenFinal::class, 'id_final', 'LU');
+    }
 }
