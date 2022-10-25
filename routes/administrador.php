@@ -88,6 +88,10 @@ Route::prefix('administrador')->name('administrador.')->group(function () {
         ->middleware('auth:administrador')
         ->name('mostrarmaterias');
 
+    Route::get('/mostrarcarreras', [CarreraController::class,'show'])
+        ->middleware('auth:administrador')
+        ->name('mostrarcarreras');
+
     Route::get('/login', [AuthenticatedSessionController::class, 'create'])
         ->middleware('guest:administrador')
         ->name('login');
