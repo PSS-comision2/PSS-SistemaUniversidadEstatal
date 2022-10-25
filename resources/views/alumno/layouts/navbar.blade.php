@@ -29,7 +29,7 @@
                         </svg>
                     </a>
                     <ul class="p-2 bg-base-100">
-                        <li><a>Consulta 1</a></li>
+                        <li><a href="/alumno/miscarreras">Ver mis carreras</a></li>
                         <li><a>Consulta 2</a></li>
                         <li><a>Consulta 3</a></li>
                     </ul>

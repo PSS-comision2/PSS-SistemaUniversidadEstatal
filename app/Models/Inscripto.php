@@ -15,4 +15,8 @@ class Inscripto extends Authenticatable
     protected $primaryKey = ['id_carrera', 'id_materia'];
     public $incrementing = false;
 
+    public function carrera() {
+        return $this->belongsTo(Carrera::class,  'id_carrera', 'id');
+    }
+
 }

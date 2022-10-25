@@ -6,6 +6,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\RindeController;
 use App\Http\Controllers\CursaController;
 use App\Http\Controllers\AlumnoController;
+use App\Http\Controllers\CarreraController;
 
 Route::prefix('alumno')->name('alumno.')->group(function () {
 
@@ -22,7 +23,7 @@ Route::prefix('alumno')->name('alumno.')->group(function () {
 
     Route::post('/inscribirfinal', [RindeController::class, 'guardar_alumno_final'])
     ->middleware('auth:alumno')
-    ->name('inscribirfinal'); 
+    ->name('inscribirfinal');
 
     Route::get('/inscribircursada', [CursaController::class, 'create'])
         ->middleware('auth:alumno')
@@ -39,6 +40,10 @@ Route::prefix('alumno')->name('alumno.')->group(function () {
     Route::get('/inscribircarrera', [AlumnoController::class, 'inscribir_alumno_carrera'])
         ->middleware('auth:alumno')
         ->name('inscribircursada');
+
+    Route::get('/miscarreras', [CarreraController::class, 'mostrar_carreras_alumno'])
+        ->middleware('auth:alumno')
+        ->name('miscarreras');
 
     Route::get('/login', [AuthenticatedSessionController::class, 'create'])
         ->middleware('guest:alumno')
