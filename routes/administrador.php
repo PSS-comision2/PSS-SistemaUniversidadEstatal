@@ -80,6 +80,10 @@ Route::prefix('administrador')->name('administrador.')->group(function () {
         ->middleware('auth:administrador')
         ->name('cargarcorrelativas');
 
+    Route::get('/mostrarfinales', [ExamenFinalController::class,'show'])
+        ->middleware('auth:administrador')
+        ->name('mostrarfinales');
+
     Route::get('/login', [AuthenticatedSessionController::class, 'create'])
         ->middleware('guest:administrador')
         ->name('login');

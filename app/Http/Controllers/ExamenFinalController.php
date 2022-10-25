@@ -71,9 +71,10 @@ class ExamenFinalController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show()
     {
-        //
+        $finales = ExamenFinal::all();
+        return view ('administrador.mostrarfinales') -> with ('finales',$finales);
     }
 
     /**
