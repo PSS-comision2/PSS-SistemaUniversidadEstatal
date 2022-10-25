@@ -52,7 +52,7 @@
                 </div>
 
                 <div class="grid grid-cols-2 gap-4 content-center mt-10">
-                    <a href="/administrador" class="btn btn-secondary " tabindex="7">Cancelar</a>
+                    <a href="/administrador/materiacorrelativa" class="btn btn-secondary " tabindex="7">Cancelar</a>
                     <button type="submit" class="btn btn-success" tabindex="8">Guardar</button>
                 </div>
             </div>
