@@ -32,8 +32,7 @@
                         <th>{{$final->materia->nombre}}</th>
                         <th>{{$final->fecha}}</th>
                         <th>{{$final->hora}}</th>
-                        <th>{{$final->profesor->nombre}}</th>
-                        <th>{{$final->profesor->apellido}}</th>
+                        <th>{{$final->profesor->nombre}} {{$final->profesor->apellido}}</th>
                     </tr>
                 @endforeach
               </tbody>
