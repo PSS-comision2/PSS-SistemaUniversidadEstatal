@@ -98,4 +98,12 @@ class CursaController extends Controller
     {
         //
     }
+
+    public function mostrar_cuatrimestre_alumno(){
+        $LU = Auth::user()->LU;
+
+        $cursadas = Cursa::all()->where('LU_alumno',$LU)->whereNull('nota');
+
+        return view('alumno.mostrarmateriasinscriptas')->with('cursadas', $cursadas);
+    }
 }

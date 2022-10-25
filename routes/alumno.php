@@ -50,6 +50,9 @@ Route::prefix('alumno')->name('alumno.')->group(function () {
         ->middleware('auth:alumno')
         ->name('misfinales');
 
+    Route::get('/mismaterias', [CursaController::class, 'mostrar_cuatrimestre_alumno'])
+        ->middleware('auth:alumno')
+        ->name('mismaterias');
 
     Route::get('/login', [AuthenticatedSessionController::class, 'create'])
         ->middleware('guest:alumno')

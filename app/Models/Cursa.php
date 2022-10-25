@@ -15,4 +15,8 @@ class Cursa extends Model
     public function alumno() {
         return $this->belongsTo(Alumno::class,  'LU_alumno', 'LU');
     }
+
+    public function materia() {
+        return $this->belongsTo(Materia::class,  'id_materia', 'id');
+    }
 }
