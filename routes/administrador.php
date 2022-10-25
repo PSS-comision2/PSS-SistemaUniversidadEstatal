@@ -9,6 +9,7 @@ use App\Http\Controllers\ProfesorController;
 use App\Http\Controllers\ExamenFinalController;
 use App\Http\Controllers\MateriaCarreraController;
 use App\Http\Controllers\MateriaCorrelativaController;
+use App\Http\Controllers\DictaController;
 use Illuminate\Support\Facades\Route;
 
 Route::prefix('administrador')->name('administrador.')->group(function () {
@@ -84,7 +85,7 @@ Route::prefix('administrador')->name('administrador.')->group(function () {
         ->middleware('auth:administrador')
         ->name('mostrarfinales');
 
-    Route::get('/mostrarmaterias', [MateriaController::class,'show'])
+    Route::get('/mostrarmaterias', [DictaController::class,'show'])
         ->middleware('auth:administrador')
         ->name('mostrarmaterias');
 

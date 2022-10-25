@@ -20,8 +20,4 @@ class Materia extends Model
     public function correlativacursadas() {
         return $this->belongsToMany(Materia::class, 'correlativa_cursadas', 'id_materia','id_correlativa_debil');
     }
-
-    public function profesor(){
-        return $this->belongsToMany(Profesor::class, 'dicta', 'id_materia', 'legajo');
-    }
 }

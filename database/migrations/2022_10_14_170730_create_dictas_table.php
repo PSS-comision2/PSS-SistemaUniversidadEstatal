@@ -18,6 +18,7 @@ return new class extends Migration
             $table->timestamps();
             $table->integer('legajo');
             $table->integer('id_materia');
+            $table->unique(['legajo', 'id_materia']);
             $table->foreign('legajo')->references('legajo')->on('profesores')->onUpdate('cascade')->onDelete('cascade');
             $table->foreign('id_materia')->references('id')->on('materias')->onUpdate('cascade')->onDelete('cascade');
         });

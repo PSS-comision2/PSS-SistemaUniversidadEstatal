@@ -2,14 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Dicta;
 use Illuminate\Http\Request;
+use App\Models\Dicta;
 
-use App\Models\Materia;
-use App\Models\Profesor;
-use Illuminate\Support\Facades\DB;
-
-class MateriaController extends Controller
+class DictaController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -28,8 +24,7 @@ class MateriaController extends Controller
      */
     public function create()
     {
-        $profesores = Profesor::orderBy("apellido")->get();
-        return view('administrador.cargarmateria')->with('profesores', $profesores);
+        //
     }
 
     /**
@@ -40,30 +35,7 @@ class MateriaController extends Controller
      */
     public function store(Request $request)
     {
-        try{
-            $request->validate([
-                'codigo' => 'required|numeric',
-                'nombre' => 'required|max:255|string',
-                'plan' => 'required|max:255|string',
-                'profesor' => 'required|numeric',
-            ]);
-            $materias = new Materia();
-            $materias->id = $request->get('codigo');
-            $materias->nombre = $request->get('nombre');
-            $materias->plan_pdf = $request->get('plan');
-
-            $materias->save();
-
-            $dicta = new Dicta();
-            $dicta->id_materia = $request->get('codigo');
-            $dicta->legajo = $request->get('profesor');
-
-            $dicta ->save();
-
-            return redirect('/administrador')->with('estado','La materia fue creada correctamente.');
-        }catch(\Exception $e){
-            return redirect('/administrador')->with('warning','El código o nombre de materia ingresado ya existe.');
-        }
+        //
     }
 
     /**
@@ -74,7 +46,8 @@ class MateriaController extends Controller
      */
     public function show()
     {
-        //
+        $dicta = Dicta::all();
+        return view ('administrador.mostrarmaterias') -> with ('dicta',$dicta);
     }
 
     /**

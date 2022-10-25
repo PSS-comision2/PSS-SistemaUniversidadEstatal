@@ -12,4 +12,5 @@ class Profesor extends Authenticatable
     use HasFactory, Notifiable;
 
     protected $table = "profesores";
+    protected $primaryKey = "legajo";
 }

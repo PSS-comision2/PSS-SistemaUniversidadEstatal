@@ -26,11 +26,11 @@
                 </tr>
               </thead>
               <tbody>
-                @foreach ($materias as $materia)
+                @foreach ($dicta as $materia_profesor)
                     <tr>
-                        <th>{{$materia->id}}</th>
-                        <th>{{$materia->nombre}}</th>
-                        @dd($materia->profesor)
+                        <th>{{$materia_profesor->id_materia}}</th>
+                        <th>{{$materia_profesor->materia->nombre}}</th>
+                        <th>{{$materia_profesor->profesor->nombre}} {{$materia_profesor->profesor->apellido}}</th>
                     </tr>
                 @endforeach
               </tbody>
