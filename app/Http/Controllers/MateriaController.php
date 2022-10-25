@@ -72,9 +72,10 @@ class MateriaController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show()
     {
-        //
+        $materias = Materia::all();
+        return view ('administrador.mostrarmaterias') -> with ('materias',$materias);
     }
 
     /**
