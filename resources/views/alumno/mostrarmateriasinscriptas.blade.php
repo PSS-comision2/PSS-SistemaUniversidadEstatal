@@ -37,7 +37,7 @@
                                       </label>
                                     </div>
                                     <div class="2xl:w-2/3">
-                                      <input class="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500" type="text" value="{{$cursadas[0]->materia->id}}" id="materiacodigo" name="materiacodigo" disabled>
+                                      <input class="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500" type="text" value="{{$cursadas->first()->materia->id}}" id="materiacodigo" name="materiacodigo" disabled>
                                     </div>
                                   </div>
                                   <div class="2xl:flex 2xl:items-center mb-6">
@@ -47,7 +47,7 @@
                                       </label>
                                     </div>
                                     <div class="2xl:w-2/3">
-                                      <input class="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500" type="text" value="{{$cursadas[0]->profesor->apellido}} {{$cursadas[0]->profesor->nombre }}"id="materianombre" name="materianombre" disabled>
+                                      <input class="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500" type="text" value="{{$cursadas->first()->profesor->apellido}} {{$cursadas->first()->profesor->nombre }}"id="materianombre" name="materianombre" disabled>
                                     </div>
                                   </div>
                             </div>
