@@ -19,6 +19,10 @@ class DictaSeeder extends Seeder
     {
         $data = [
             [
+                'legajo' => '67474',
+                'id_materia' => '1',
+            ],
+            [
                 'legajo' => '74742',
                 'id_materia' => '2',
             ],
@@ -26,15 +30,17 @@ class DictaSeeder extends Seeder
                 'legajo' => '74742',
                 'id_materia' => '3',
             ],
-
+            [
+                'legajo' => '12345',
+                'id_materia' => '4',
+            ],
+            [
+                'legajo' => '12345',
+                'id_materia' => '5',
+            ],
             [
                 'legajo' => '12345',
                 'id_materia' => '6',
-            ],
-
-            [
-                'legajo' => '67474',
-                'id_materia' => '1',
             ],
 
     ];

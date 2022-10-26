@@ -16,4 +16,8 @@ class Dicta extends Model
         return $this->belongsTo(Materia::class,  'id_materia', 'id');
     }
 
+    public function profesor() {
+        return $this->belongsTo(Profesor::class,  'legajo', 'legajo');
+    }
+
 }
