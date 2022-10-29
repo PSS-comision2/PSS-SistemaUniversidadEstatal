@@ -60,6 +60,16 @@ Route::prefix('administrador')->name('administrador.')->group(function () {
         ->middleware('auth:administrador')
         ->name('cargarexamenfinal');
 
+
+    Route::post('/cerrarexamenfinal', [ExamenFinalController::class, 'destroy'])
+        ->middleware('auth:administrador')
+        ->name('cerrarexamenfinal');
+
+
+    Route::get('/cerrarexamenfinal', [ExamenFinalController::class, 'cerrar_mesa_vista'])
+        ->middleware('auth:administrador')
+        ->name('cerrarexamenfinal');
+
     Route::get('/cargarmateriacarrera', [MateriaCarreraController::class, 'create'])
         ->middleware('auth:administrador')
         ->name('cargarmateriacarrera');

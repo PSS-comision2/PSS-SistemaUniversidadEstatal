@@ -18,6 +18,8 @@
                         <li><a href="/administrador/cargarprofesor">Cargar profesor</a></li>
                         <li><a href="/administrador/cargarexamenfinal">Cargar mesa</a></li>
                         <li><a href = "/administrador/cargarmateriacarrera">Asociar materia a carrera</a></li>
+                        <li><a href = "/administrador/cerrarexamenfinal">Cerrar mesa de examen</a></li>
+
                     </ul>
                 </li>
             </ul>
