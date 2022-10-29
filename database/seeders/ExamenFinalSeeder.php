@@ -23,6 +23,7 @@ class ExamenFinalSeeder extends Seeder
                 'hora' => '19:00',
                 'ubicacion' => 'Complejo Alem',
                 'observacion' => '',
+                'estado'=> 'Cerrado',
                 'id_profesor' => '3',
                 'id_materia' => '3',
                 'observacion' => 'Traer DNI.'
@@ -32,6 +33,7 @@ class ExamenFinalSeeder extends Seeder
                 'hora' => '20:00',
                 'ubicacion' => 'Palihue',
                 'observacion' => '',
+                'estado'=> 'Abierto',
                 'id_profesor' => '3',
                 'id_materia' => '1',
                 'observacion' => 'Deben traer sus computadoras.'
@@ -42,6 +44,7 @@ class ExamenFinalSeeder extends Seeder
                 'hora' => '08:00',
                 'ubicacion' => 'Palihue',
                 'observacion' => '',
+                'estado'=> 'Abierto',
                 'id_profesor' => '1',
                 'id_materia' => '6',
                 'observacion' => 'Coloquio - Pueden traer sus apuntes.'
@@ -52,6 +55,7 @@ class ExamenFinalSeeder extends Seeder
                 'hora' => '08:00',
                 'ubicacion' => 'Alem - Aula 13',
                 'observacion' => '',
+                'estado'=> 'Abierto',
                 'id_profesor' => '2',
                 'id_materia' => '3',
                 'observacion' => 'Presentarse 15 minutos antes.'
