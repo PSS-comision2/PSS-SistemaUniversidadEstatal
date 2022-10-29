@@ -35,7 +35,7 @@
                     <ul class="p-2 bg-base-100 z-50">
                         <li><a href="/administrador/mostrarfinales">Mesas de examen</a></li>
                         <li><a href="/administrador/mostrarprofesores">Profesores</a></li>
-                        <li><a>Consulta 3</a></li>
+                        <li><a href="/administrador/mostraralumnos">Alumnos</a></li>
                     </ul>
                 </li>
             </ul>

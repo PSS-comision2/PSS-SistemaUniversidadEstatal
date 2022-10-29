@@ -69,12 +69,12 @@ class AlumnoController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show()
     {
-        //
+        $alumnos = Alumno::all(); 
+        return view ('administrador.mostraralumnos')->with('alumnos', $alumnos);
     }
 
     /**
