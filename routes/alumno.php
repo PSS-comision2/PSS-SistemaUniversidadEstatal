@@ -40,11 +40,11 @@ Route::prefix('alumno')->name('alumno.')->group(function () {
         ->middleware('auth:alumno')
         ->name('inscribircursada');
 
-    Route::get('/modificardatos', [AlumnoController::class, 'vista_modificar_datos'])
+    Route::get('/modificardatos', [AlumnoController::class, 'modificar_datos_vista'])
         ->middleware('auth:alumno')
         ->name('modificardatos');
 
-    Route::get('/modificaremail', [AlumnoController::class, 'vista_modificar_email'])
+    Route::get('/modificaremail', [AlumnoController::class, 'modificar_email_vista'])
         ->middleware('auth:alumno')
         ->name('modificaremail');
         
@@ -52,7 +52,7 @@ Route::prefix('alumno')->name('alumno.')->group(function () {
         ->middleware('auth:alumno')
         ->name('modificaremail');
 
-    Route::get('/modificarcelular', [AlumnoController::class, 'vista_modificar_celular'])
+    Route::get('/modificarcelular', [AlumnoController::class, 'modificar_celular_vista'])
         ->middleware('auth:alumno')
         ->name('modificarcelular');
 

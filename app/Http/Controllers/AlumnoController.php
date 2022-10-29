@@ -130,12 +130,12 @@ class AlumnoController extends Controller
         return redirect('/alumno')->with('estado','La inscripción se realizó correctamente.');
     }
 
-    public function vista_modificar_datos(){
+    public function modificar_datos_vista(){
 
         return view('alumno.modificardatos');
     }
 
-    public function vista_modificar_email(){
+    public function modificar_email_vista(){
         return view('alumno.modificaremail');
     }
 
@@ -155,7 +155,7 @@ class AlumnoController extends Controller
         }
     }
 
-    public function vista_modificar_celular(){
+    public function modificar_celular_vista(){
         return view('alumno.modificarcelular');
     }
 
