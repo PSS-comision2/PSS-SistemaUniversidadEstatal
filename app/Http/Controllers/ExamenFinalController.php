@@ -119,18 +119,21 @@ class ExamenFinalController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Request $request)
+    public function cerrar_mesa_impl(Request $request)
     {
        // dd($request);
         $id = $request->get('final');
         $final = ExamenFinal::find($id);
-       // $final->delete();
+        $final->estado = 'Cerrado';
+        $final->save();
 
         return redirect('/administrador')->with('estado','La mesa de examen fue cerrada correctamente.');
     }
 
     public function cerrar_mesa_vista() {
-        $finales = ExamenFinal::orderBy("id_materia")->get();
+
+        $finales = ExamenFinal::all()->where('estado', 'Abierto');
+    
         return view('administrador.cerrarexamenfinal')->with('finales', $finales);
     }
 

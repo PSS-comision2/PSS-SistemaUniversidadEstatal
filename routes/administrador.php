@@ -61,7 +61,7 @@ Route::prefix('administrador')->name('administrador.')->group(function () {
         ->name('cargarexamenfinal');
 
 
-    Route::post('/cerrarexamenfinal', [ExamenFinalController::class, 'destroy'])
+    Route::post('/cerrarexamenfinal', [ExamenFinalController::class, 'cerrar_mesa_impl'])
         ->middleware('auth:administrador')
         ->name('cerrarexamenfinal');
 
