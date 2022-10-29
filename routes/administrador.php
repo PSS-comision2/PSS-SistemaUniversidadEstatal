@@ -94,6 +94,14 @@ Route::prefix('administrador')->name('administrador.')->group(function () {
         ->middleware('auth:administrador')
         ->name('mostrarfinales');
 
+    Route::get('/mostrarprofesores', [ProfesorController::class,'show'])
+        ->middleware('auth:administrador')
+        ->name('mostrarprofesores');
+
+    Route::get('/mostraralumnos', [AlumnoController::class,'show'])
+        ->middleware('auth:administrador')
+        ->name('mostraralumnos');
+
     Route::get('/login', [AuthenticatedSessionController::class, 'create'])
         ->middleware('guest:administrador')
         ->name('login');

@@ -69,12 +69,12 @@ class AlumnoController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show()
     {
-        //
+        $alumnos = Alumno::all(); 
+        return view ('administrador.mostraralumnos')->with('alumnos', $alumnos);
     }
 
     /**
@@ -130,8 +130,48 @@ class AlumnoController extends Controller
         return redirect('/alumno')->with('estado','La inscripción se realizó correctamente.');
     }
 
-    public function modificar_datos(){
+    public function modificar_datos_vista(){
 
         return view('alumno.modificardatos');
+    }
+
+    public function modificar_email_vista(){
+        return view('alumno.modificaremail');
+    }
+
+    public function modificar_email(Request $request){
+        try{
+            $alumno = Auth::user();
+            $request->validate([
+                'email' => 'required|max:255|string'
+            ]);
+
+            $alumno->email = $request->get('email');            
+            $alumno->save();
+
+            return redirect('/alumno')->with('estado','El email fue modificado correctamente.');
+        }catch(\Exception $e){
+            return redirect('/alumno')->with('warning','El email ingresado no es válido.');
+        }
+    }
+
+    public function modificar_celular_vista(){
+        return view('alumno.modificarcelular');
+    }
+
+    public function modificar_celular(Request $request){
+        try{
+            $alumno = Auth::user();
+            $request->validate([
+                'celular' => 'required|numeric'
+            ]);
+
+            $alumno->celular = $request->get('celular');            
+            $alumno->save();
+
+            return redirect('/alumno')->with('estado','El celular fue modificado correctamente.');
+        }catch(\Exception $e){
+            return redirect('/alumno')->with('warning','El celular ingresado no es válido.');
+        }
     }
 }
