@@ -16,8 +16,8 @@
             <form action="/alumno/modificardatos" method="POST">
                 @csrf
                 <div class="mx-5 my-5">
-                    <a class="btn btn-light">Modificar mi e-mail</a>
-                    <a class="btn btn-light">Modificar mi celular</a>
+                    <a href="/alumno/modificaremail" class="btn btn-light">Modificar mi e-mail</a>
+                    <a href="/alumno/modificarcelular" class="btn btn-light">Modificar mi celular</a>
                 </div>
             </form>
         </div>

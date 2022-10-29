@@ -40,9 +40,25 @@ Route::prefix('alumno')->name('alumno.')->group(function () {
         ->middleware('auth:alumno')
         ->name('inscribircursada');
 
-    Route::get('/modificardatos', [AlumnoController::class, 'modificar_datos'])
+    Route::get('/modificardatos', [AlumnoController::class, 'vista_modificar_datos'])
         ->middleware('auth:alumno')
         ->name('modificardatos');
+
+    Route::get('/modificaremail', [AlumnoController::class, 'vista_modificar_email'])
+        ->middleware('auth:alumno')
+        ->name('modificaremail');
+        
+    Route::post('/modificaremail', [AlumnoController::class, 'modificar_email'])
+        ->middleware('auth:alumno')
+        ->name('modificaremail');
+
+    Route::get('/modificarcelular', [AlumnoController::class, 'vista_modificar_celular'])
+        ->middleware('auth:alumno')
+        ->name('modificarcelular');
+
+    Route::post('/modificarcelular', [AlumnoController::class, 'modificar_celular'])
+        ->middleware('auth:alumno')
+        ->name('modificarcelular');
 
     Route::get('/login', [AuthenticatedSessionController::class, 'create'])
         ->middleware('guest:alumno')
