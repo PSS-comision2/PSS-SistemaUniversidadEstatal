@@ -129,4 +129,9 @@ class AlumnoController extends Controller
 
         return redirect('/alumno')->with('estado','La inscripción se realizó correctamente.');
     }
+
+    public function modificar_datos(){
+
+        return view('alumno.modificardatos');
+    }
 }

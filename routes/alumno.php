@@ -40,6 +40,10 @@ Route::prefix('alumno')->name('alumno.')->group(function () {
         ->middleware('auth:alumno')
         ->name('inscribircursada');
 
+    Route::get('/modificardatos', [AlumnoController::class, 'modificar_datos'])
+        ->middleware('auth:alumno')
+        ->name('modificardatos');
+
     Route::get('/login', [AuthenticatedSessionController::class, 'create'])
         ->middleware('guest:alumno')
         ->name('login');

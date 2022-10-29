@@ -14,6 +14,7 @@
                     <li><a href="/alumno/inscribircursada">Inscribir a materia</a></li>
                     <li><a href="/alumno/inscribirfinal">Inscribir a final</a></li>
                     <li><a href="/alumno/inscribircarrera">Inscribir a carrera</a></li>
+                    <li><a href="/alumno/modificardatos">Modificar mis datos</a></li>
                     </ul>
                 </li>
             </ul>
@@ -29,7 +30,7 @@
                         </svg>
                     </a>
                     <ul class="p-2 bg-base-100">
-                        <li><a>Consulta 1</a></li>
+                        <li><a href="/alumno/historialacademico">Historial académico</a></li>
                         <li><a>Consulta 2</a></li>
                         <li><a>Consulta 3</a></li>
                     </ul>
