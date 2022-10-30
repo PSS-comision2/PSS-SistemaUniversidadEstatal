@@ -60,6 +60,10 @@ Route::prefix('alumno')->name('alumno.')->group(function () {
         ->middleware('auth:alumno')
         ->name('modificarcelular');
 
+    Route::get('/historiaacademica', [CursaController::class, 'show'])
+        ->middleware('auth:alumno')
+        ->name('historiaacademica');
+
     Route::get('/login', [AuthenticatedSessionController::class, 'create'])
         ->middleware('guest:alumno')
         ->name('login');
