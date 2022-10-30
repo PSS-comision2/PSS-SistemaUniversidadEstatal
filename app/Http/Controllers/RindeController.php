@@ -72,10 +72,19 @@ class RindeController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
+    /*
     public function show()
     {
         $rinde = Rinde::all();
-        return view ('alumno.historiaacademica')->with('rinde', $rinde);
+        $materia = Materia::all();
+        return view ('alumno.historiaacademica')->with('rinde', $rinde)->with('materia', $materia);;
+    }
+    */
+    public function finales()
+    {
+        $rinde = Rinde::all();
+        $materia = Materia::all();
+        return view ('alumno.historiaacademica')->with('rinde', $rinde)->with('materia', $materia);
     }
 
     /**

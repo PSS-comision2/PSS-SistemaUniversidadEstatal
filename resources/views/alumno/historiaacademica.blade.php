@@ -18,20 +18,35 @@
             <table class="table w-full text-center">
              <thead>
                 <tr>
+                  <th>Codigo materia</th>
+                  <th>Tipo</th>
                   <th>Nombre</th>
-                  <th>Nota</th>
+                  <th>Resultado</th>
                 </tr>
               </thead>
               <tbody>
                 @foreach ($cursa as $materia_cursa)
                     <tr>
                         <th>{{$materia_cursa->id_materia}}</th>
-                        <th>{{$materia_cursa->materia->nombre}}</th>
+                        <th>Cursada</th>
+                        <th>{{$materia[$materia_cursa->id_materia-1]->nombre}}</th>
                         <th>{{$materia_cursa->nota}}</th>
                     </tr>
                 @endforeach
+
+      
+                @foreach ($rinde as $materia_rinde)
+                    <tr>
+                        <th>{{$materia_rinde->id}}</th>
+                        <th>Final</th>
+                        <th>{{$materia[$materia_rinde->id-1]->nombre}}</th>
+                        <th>{{$materia_rinde->nota}}</th>
+                    </tr>
+                @endforeach
+
               </tbody>
             </table>
+
           </div>
     </div>
 

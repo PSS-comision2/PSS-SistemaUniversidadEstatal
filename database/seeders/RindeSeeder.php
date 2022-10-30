@@ -21,20 +21,24 @@ class RindeSeeder extends Seeder
             [
                 'LU_alumno' => '127589',
                 'id_final' => '1',
+                'nota' => '4'
             ],
             [
                 'LU_alumno' => '116853',
                 'id_final' => '1',
+                'nota' => '7'
             ],
 
             [
                 'LU_alumno' => '116853',
                 'id_final' => '3',
+                'nota' => '8'
             ],
 
             [
                 'LU_alumno' => '106464',
                 'id_final' => '4',
+                'nota' => '10'
             ],
 
 

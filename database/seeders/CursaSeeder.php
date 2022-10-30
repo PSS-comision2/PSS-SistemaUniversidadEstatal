@@ -22,22 +22,26 @@ class CursaSeeder extends Seeder
                 'fecha_inicio' => '2021-08-08',
                 'LU_alumno' => '127589',
                 'id_materia' => '2',
+                'nota' => 'Aprobado',
             ],
             [
                 'fecha_inicio' => '2021-02-17',
                 'LU_alumno' => '116853',
                 'id_materia' => '3',
+                'nota' => 'Desaprobado',
             ],
             [
                 'fecha_inicio' => '2021-08-23',
                 'LU_alumno' => '127589',
                 'id_materia' => '3',
+                'nota' => 'Ausente',
             ],
 
             [
                 'fecha_inicio' => '2022-04-16',
                 'LU_alumno' => '116853',
                 'id_materia' => '6',
+                'nota' => 'Aprobado',
             ],
 
     ];

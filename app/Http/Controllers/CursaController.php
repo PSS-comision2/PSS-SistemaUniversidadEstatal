@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\Cursa;
 use App\Models\Alumno;
 use App\Models\Materia;
+use App\Models\Rinde;
 use Auth;
 
 class CursaController extends Controller
@@ -62,8 +63,11 @@ class CursaController extends Controller
      */
     public function show()
     {
+        
         $cursa = Cursa::all();
-        return view ('alumno.historiaacademica')->with('cursa', $cursa);
+        $rinde = Rinde::all();
+        $materia = Materia::all();
+        return view ('alumno.historiaacademica')->with('cursa', $cursa)->with('rinde', $rinde)->with('materia', $materia);
     }
 
     /**
