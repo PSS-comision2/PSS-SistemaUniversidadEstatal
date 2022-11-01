@@ -15,7 +15,7 @@
         <div class="card bg-base-100 shadow-xl max-w-xl mx-auto mt-12">
             <form action="/alumno/modificardatos" method="POST">
                 @csrf
-                <div class="mx-5 my-5">
+                <div class="d-flex justify-content-center align-items-center mx-5 my-5 text-center">
                     <a href="/alumno/modificaremail" class="btn btn-light">Modificar mi e-mail</a>
                     <a href="/alumno/modificarcelular" class="btn btn-light">Modificar mi celular</a>
                 </div>
