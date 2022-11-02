@@ -60,6 +60,7 @@ class ExamenFinalController extends Controller
         $final->id_materia = $request->get('materia');
         $final->id_profesor = $request->get('profesor');
         $final->observacion = $request->get('observaciones');
+        $final->estado = 'Abierto';
         $final->save();
 
         return redirect('/administrador')->with('estado','La mesa de examen fue creada correctamente.');
