@@ -55,8 +55,7 @@
                 <ul class="btn btn-outline">
                     <li>
                         <form id="logout-form" action="{{ route('alumno.logout') }}" method="POST">
-                            <a href="javascript:;" class=""
-                                onclick="document.getElementById('logout-form').submit();">
+                            <a onclick="document.getElementById('logout-form').submit();">
                                 <span class=" ">Cerrar sesión</span>
                             </a>
                             @csrf
