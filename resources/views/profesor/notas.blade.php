@@ -36,7 +36,7 @@
                                 </th>
                                 <th>{{ $alumno_rinde->alumno->apellido }}</th>
                                 <th>{{ $alumno_rinde->alumno->nombre }}</th>
-                                <th><input id="nota" name="notas[]" type="number" class="input input-bordered text-center" min="0" tabindex="{{ $loop->index+1}}" value="{{$alumno_rinde->nota}}"></th>
+                                <th><input id="nota" name="notas[]" type="number" class="input input-bordered text-center" min="0" max="10" tabindex="{{ $loop->index+1}}" value="{{$alumno_rinde->nota}}"></th>
                             </tr>
                         @endforeach
                     </tbody>
