@@ -20,7 +20,7 @@
                 @if(count($examenes_finales)>0)
                     <select class="select select-bordered w-full" name="final" id="final" tabindex="3">
                         @foreach ($examenes_finales as $examen)
-                            <option value="{{$examen->id}}" profesor='{{$examen->profesor->nombre}} {{$examen->profesor->apellido}}' ubicacion='{{$examen->ubicacion}}' fecha='{{$examen->fecha}}' hora='{{$examen->hora}}' observaciones='{{$examen->observaciones}}'> {{$examen->materia->nombre}}</option>
+                            <option value="{{$examen->id}}" profesor='{{$examen->profesor->nombre}} {{$examen->profesor->apellido}}' ubicacion='{{$examen->ubicacion}}' fecha='{{$examen->fecha}}' hora='{{$examen->hora}}' observaciones='{{$examen->observacion}}'> {{$examen->materia->nombre}}</option>
                         @endforeach
                     </select>
                 @else
