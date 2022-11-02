@@ -23,11 +23,11 @@
                     <label class="label"><span class="label-text">Final</span></label>
                     <select class="select select-bordered w-full" name="final" id="final" tabindex="1">
                         @foreach ($finales as $final)
-                            <option value="{{$final->id}}"> {{ $final->materia->nombre }} - {{ $final->id_materia }}</option>
+                            <option value="{{$final->id}}"> {{ $final->materia->nombre }} - {{ $final->id_materia }} - {{ $final->fecha }} - {{ $final->hora }}</option>
                         @endforeach
                     </select>
                 </div>
-                
+
                 <div class="grid grid-cols-2 gap-4 content-center mt-10">
                     <a href="/administrador" class="btn btn-secondary " tabindex="7">Cancelar</a>
                     <button type="submit" class="btn btn-success" tabindex="8">Cerrar mesa</button>
