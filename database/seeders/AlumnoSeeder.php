@@ -46,6 +46,15 @@ class AlumnoSeeder extends Seeder
                 'celular' => '154064321',
                 'password' => Hash::make('1111'),
             ],
+            [
+                'LU' => '123',
+                'nombre' => 'Fermin',
+                'apellido' => 'Alvarez',
+                'DNI' => '123',
+                'email' => '123@yahoo.com',
+                'celular' => '154064321',
+                'password' => Hash::make('123'),
+            ],
     ];
     DB::table('alumnos')->insert($data);
     }

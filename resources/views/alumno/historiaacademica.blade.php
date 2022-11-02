@@ -29,17 +29,17 @@
                     <tr>
                         <th>{{$materia_cursa->id_materia}}</th>
                         <th>Cursada</th>
-                        <th>{{$materia[$materia_cursa->id_materia-1]->nombre}}</th>
+                        <th>{{$materia_cursa->materia->nombre}}</th>
                         <th>{{$materia_cursa->nota}}</th>
                     </tr>
                 @endforeach
 
-      
+
                 @foreach ($rinde as $materia_rinde)
                     <tr>
                         <th>{{$materia_rinde->id}}</th>
                         <th>Final</th>
-                        <th>{{$materia[$materia_rinde->id-1]->nombre}}</th>
+                        <th>{{$materia_rinde->final->materia->nombre}}</th>
                         <th>{{$materia_rinde->nota}}</th>
                     </tr>
                 @endforeach
@@ -52,4 +52,4 @@
 
 </body>
 
-</html> 
+</html>

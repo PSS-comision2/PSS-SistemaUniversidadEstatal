@@ -69,8 +69,7 @@ class CursaController extends Controller
         $LU = Auth::user()->LU;
         $cursa = Cursa::all()->where('LU_alumno', $LU);
         $rinde = Rinde::all()->where('LU_alumno', $LU);
-        $materia = Materia::all();
-        return view ('alumno.historiaacademica')->with('cursa', $cursa)->with('rinde', $rinde)->with('materia', $materia);
+        return view ('alumno.historiaacademica')->with('cursa', $cursa)->with('rinde', $rinde);
     }
 
     /**
