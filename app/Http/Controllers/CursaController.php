@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Cursa;
 use App\Models\Alumno;
+use App\Models\Dicta;
 use App\Models\Materia;
 use Auth;
 
@@ -98,5 +99,14 @@ class CursaController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+    public function mostrar_cuatrimestre_alumno(){
+        $LU = Auth::user()->LU;
+
+        $cursadas = Cursa::all()->where('LU_alumno',$LU)->whereNull('nota')->pluck('id_materia')->toArray();
+        $materias = Dicta::all()->whereIn('id_materia',$cursadas);
+
+        return view('alumno.mostrarmateriasinscriptas')->with('cursadas', $materias);
     }
 }

@@ -7,7 +7,7 @@ use App\Models\Materia;
 use App\Models\Profesor;
 use App\Models\Rinde;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Log;
+use Carbon\Carbon;
 use Auth;
 
 
@@ -122,5 +122,14 @@ class ExamenFinalController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+    public function mostrar_finales_alumno(){
+        $LU = Auth::user()->LU;
+
+        $finalessinrendir = Rinde::all()->where('LU_alumno',$LU)->whereNull('nota')->pluck('id_final')->toArray();
+        $hoy = Carbon::today();
+        $examenes_finales_filtrados = ExamenFinal::all()->whereIn('id',$finalessinrendir)->where('fecha', '>=', $hoy)->where('hora', '>=', date("H:i"));
+        return view('alumno.mostrarfinalesinscriptos')->with('examenes_finales', $examenes_finales_filtrados);
     }
 }

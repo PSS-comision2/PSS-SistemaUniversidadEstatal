@@ -5,7 +5,9 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
 use App\Models\Carrera;
+use App\Models\Inscripto;
 use Illuminate\Support\Facades\DB;
+use Auth;
 
 class CarreraController extends Controller
 {
@@ -100,5 +102,12 @@ class CarreraController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+    public function mostrar_carreras_alumno(){
+        $LU = Auth::user()->LU;
+        $carrerasinscripto = Inscripto::all()->where('LU_alumno',$LU);
+
+        return view('alumno.mostrarcarrerasinscriptas')->with('carrerasinscripto', $carrerasinscripto);
     }
 }
