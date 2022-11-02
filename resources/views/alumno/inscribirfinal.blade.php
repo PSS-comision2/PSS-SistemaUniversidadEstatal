@@ -20,7 +20,7 @@
                     <h2 class="card-title mx-auto">Seleccione el final al que desea inscribirse</h2>
                         <select class="select select-bordered w-full" name="examenfinal" id="examenfinal" tabindex="3">
                         @foreach ($finales as $final)
-                            <option value="{{$final->id}}" nombre='{{$final->materia->nombre}}' fecha='{{$final->fecha}}' hora='{{$final->hora}}' ubicacion='{{$final->ubicacion}}' observacion='{{$final->observacion}}'>{{$final->materia->nombre}} - {{$final->fecha}} - {{$final->hora}}</option>
+                            <option value="{{$final->id}}" nombre='{{$final->materia->nombre}}' fecha='{{$final->fecha}}' hora='{{$final->hora}}' ubicacion='{{$final->ubicacion}}' profesor='{{$final->profesor->nombre}} {{$final->profesor->apellido}}' observacion='{{$final->observacion}}'>{{$final->materia->nombre}} - {{$final->fecha}} - {{$final->hora}}</option>
                         @endforeach
                         </select>
                     @else
@@ -30,6 +30,7 @@
                         <div class="card bg-base-100 ">
                             <div class="card-body">
                                 <h2 class="card-title" id="examennombre"> {{$finales[0]->materia->nombre}}</h2>
+                                <h3 class="card-title" id="examenprofesor"> {{$finales[0]->profesor->nombre}} {{$finales[0]->profesor->apellido}}</h2>
                                 <h3 class="card-subtitle" id="examenfechahora">{{$finales[0]->ubicacion}} - {{$finales[0]->fecha}} - {{$finales[0]->hora}}</h2>
                                 <p id="observacion">{{$finales[0]->observacion}}</p>
                             </div>
@@ -50,11 +51,13 @@
         var nombre = document.getElementById("examennombre");
         var fechahora = document.getElementById("examenfechahora");
         var observacion = document.getElementById("observacion");
+        var profesor = document.getElementById("examenprofesor");
 
         select.onchange = function(event){
             nombre.innerHTML = event.target.options[event.target.selectedIndex].getAttribute('nombre');
             fechahora.innerHTML = `${event.target.options[event.target.selectedIndex].getAttribute('ubicacion')} - ${event.target.options[event.target.selectedIndex].getAttribute('fecha')} - ${event.target.options[event.target.selectedIndex].getAttribute('hora')}`;
             observacion.innerHTML = event.target.options[event.target.selectedIndex].getAttribute('observacion');
+            profesor.innerHTML = event.target.options[event.target.selectedIndex].getAttribute('profesor');
         };
     </script>
 </html>
