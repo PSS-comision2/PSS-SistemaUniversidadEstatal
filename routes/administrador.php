@@ -85,6 +85,13 @@ Route::prefix('administrador')->name('administrador.')->group(function () {
         ->middleware('auth:administrador')
         ->name('mostrarfinales');
 
+    Route::get('/mostrarprofesores', [ProfesorController::class,'show'])
+        ->middleware('auth:administrador')
+        ->name('mostrarprofesores');
+
+    Route::get('/mostraralumnos', [AlumnoController::class,'show'])
+        ->middleware('auth:administrador')
+        ->name('mostraralumnos');
     Route::get('/mostrarmaterias', [DictaController::class,'show'])
         ->middleware('auth:administrador')
         ->name('mostrarmaterias');

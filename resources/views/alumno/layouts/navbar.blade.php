@@ -14,6 +14,7 @@
                     <li><a href="/alumno/inscribircursada">Inscribir a materia</a></li>
                     <li><a href="/alumno/inscribirfinal">Inscribir a final</a></li>
                     <li><a href="/alumno/inscribircarrera">Inscribir a carrera</a></li>
+                    <li><a href="/alumno/modificardatos">Modificar mis datos</a></li>
                     </ul>
                 </li>
             </ul>
@@ -32,6 +33,7 @@
                         <li><a href="/alumno/miscarreras">Ver mis carreras</a></li>
                         <li><a href="/alumno/misfinales">Ver mis inscripciones a finales</a></li>
                         <li><a href="/alumno/mismaterias">Ver mis materias</a></li>
+                        <li><a href="/alumno/historiaacademica">Ver mi historia académica</a></li>
                     </ul>
                 </li>
             </ul>

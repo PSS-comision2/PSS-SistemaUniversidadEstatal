@@ -13,6 +13,7 @@
 
 <body>
     @include('alumno.layouts.navbar')
+    
     <div class="card bg-base-100 shadow-xl max-w-xl mx-auto mt-12">
         <form action="/alumno/inscribircursada" method="POST">
             @csrf

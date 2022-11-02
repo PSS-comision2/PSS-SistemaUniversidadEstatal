@@ -7,6 +7,7 @@ use App\Models\Cursa;
 use App\Models\Alumno;
 use App\Models\Dicta;
 use App\Models\Materia;
+use App\Models\Rinde;
 use Auth;
 
 class CursaController extends Controller
@@ -62,9 +63,13 @@ class CursaController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show()
     {
-        //
+        
+        $cursa = Cursa::all();
+        $rinde = Rinde::all();
+        $materia = Materia::all();
+        return view ('alumno.historiaacademica')->with('cursa', $cursa)->with('rinde', $rinde)->with('materia', $materia);
     }
 
     /**

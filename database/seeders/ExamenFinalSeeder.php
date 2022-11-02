@@ -22,6 +22,8 @@ class ExamenFinalSeeder extends Seeder
                 'fecha' => '2022-12-20',
                 'hora' => '19:00',
                 'ubicacion' => 'Complejo Alem',
+                'observacion' => '',
+                'estado'=> 'Cerrado',
                 'id_profesor' => '3',
                 'id_materia' => '3',
                 'observacion' => 'Traer DNI.'
@@ -30,6 +32,8 @@ class ExamenFinalSeeder extends Seeder
                 'fecha' => '2022-12-26',
                 'hora' => '20:00',
                 'ubicacion' => 'Palihue',
+                'observacion' => '',
+                'estado'=> 'Abierto',
                 'id_profesor' => '3',
                 'id_materia' => '1',
                 'observacion' => 'Deben traer sus computadoras.'
@@ -39,6 +43,8 @@ class ExamenFinalSeeder extends Seeder
                 'fecha' => '2022-11-30',
                 'hora' => '08:00',
                 'ubicacion' => 'Palihue',
+                'observacion' => '',
+                'estado'=> 'Abierto',
                 'id_profesor' => '1',
                 'id_materia' => '6',
                 'observacion' => 'Coloquio - Pueden traer sus apuntes.'
@@ -48,6 +54,8 @@ class ExamenFinalSeeder extends Seeder
                 'fecha' => '2022-12-28',
                 'hora' => '08:00',
                 'ubicacion' => 'Alem - Aula 13',
+                'observacion' => '',
+                'estado'=> 'Abierto',
                 'id_profesor' => '2',
                 'id_materia' => '3',
                 'observacion' => 'Presentarse 15 minutos antes.'
@@ -57,6 +65,8 @@ class ExamenFinalSeeder extends Seeder
                 'fecha' => '2023-03-15',
                 'hora' => '08:00',
                 'ubicacion' => 'Alem - Aula 18',
+                'observacion' => '',
+                'estado'=> 'Abierto',
                 'id_profesor' => '3',
                 'id_materia' => '6',
                 'observacion' => 'Presentarse 15 minutos antes.'
