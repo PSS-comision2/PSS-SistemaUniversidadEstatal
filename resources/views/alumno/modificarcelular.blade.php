@@ -20,14 +20,14 @@
                     <div class="my-3">
                         <label class="label"><span class="label-text">Nuevo celular</span></label>
                         <input id="celular" name="celular" type="celular" class="input input-bordered w-full"
-                            tabindex="1" required value="{{ old('celular') }}" placeholder="Ingrese el nuevo celular">
+                            tabindex="1" required value="{{$celular_actual}}" placeholder="Ingrese el nuevo celular">
                     </div>
                     <div class="grid grid-cols-2 gap-4 content-center mt-10">
                         <a href="/alumno" class="btn btn-secondary " tabindex="7">Cancelar</a>
                         <button type="submit" class="btn btn-success" tabindex="8">Guardar</button>
                     </div>
                 </div>
-            </form>    
+            </form>
         </div>
     </body>
-<html>    
+<html>

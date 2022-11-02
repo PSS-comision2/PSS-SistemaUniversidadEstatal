@@ -73,7 +73,7 @@ class AlumnoController extends Controller
      */
     public function show()
     {
-        $alumnos = Alumno::all(); 
+        $alumnos = Alumno::all();
         return view ('administrador.mostraralumnos')->with('alumnos', $alumnos);
     }
 
@@ -136,7 +136,8 @@ class AlumnoController extends Controller
     }
 
     public function modificar_email_vista(){
-        return view('alumno.modificaremail');
+        $email_actual = Auth::user()->email;
+        return view('alumno.modificaremail')->with('email_actual',$email_actual);
     }
 
     public function modificar_email(Request $request){
@@ -146,7 +147,7 @@ class AlumnoController extends Controller
                 'email' => 'required|max:255|string'
             ]);
 
-            $alumno->email = $request->get('email');            
+            $alumno->email = $request->get('email');
             $alumno->save();
 
             return redirect('/alumno')->with('estado','El email fue modificado correctamente.');
@@ -156,7 +157,8 @@ class AlumnoController extends Controller
     }
 
     public function modificar_celular_vista(){
-        return view('alumno.modificarcelular');
+        $celular_actual = Auth::user()->celular;
+        return view('alumno.modificarcelular')->with('celular_actual',$celular_actual);
     }
 
     public function modificar_celular(Request $request){
@@ -166,7 +168,7 @@ class AlumnoController extends Controller
                 'celular' => 'required|numeric'
             ]);
 
-            $alumno->celular = $request->get('celular');            
+            $alumno->celular = $request->get('celular');
             $alumno->save();
 
             return redirect('/alumno')->with('estado','El celular fue modificado correctamente.');

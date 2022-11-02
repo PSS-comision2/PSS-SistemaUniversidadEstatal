@@ -19,16 +19,16 @@
                 <h2 class="card-title mx-auto">Modificar mi email</h2>
                     <div class="my-3">
                         <label class="label"><span class="label-text">Nuevo email</span></label>
-                        <input id="email" name="email" type="text" class="input input-bordered w-full"
-                            tabindex="1" required value="{{ old('email') }}" placeholder="Ingrese el nuevo email">
+                        <input id="email" name="email" type="email" class="input input-bordered w-full"
+                            tabindex="1" required placeholder="Ingrese el nuevo email" value="{{$email_actual}}">
                     </div>
                     <div class="grid grid-cols-2 gap-4 content-center mt-10">
                         <a href="/alumno" class="btn btn-secondary " tabindex="7">Cancelar</a>
                         <button type="submit" class="btn btn-success" tabindex="8">Guardar</button>
                     </div>
                 </div>
-            </form>    
+            </form>
         </div>
     </body>
-<html>    
+<html>
 
