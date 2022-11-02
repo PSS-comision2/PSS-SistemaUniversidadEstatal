@@ -20,7 +20,7 @@ return new class extends Migration
             $table->time('hora');
             $table->string('ubicacion');
             $table->string('observacion')->nullable();
-            $table->enum('estado', ['Abierto', 'Cerrado'])->nullable();
+            $table->enum('estado', ['Abierto', 'Cerrado']);
             $table->integer('id_profesor');
             $table->integer('id_materia');
             $table->foreign('id_profesor')->references('id')->on('profesores')->onUpdate('cascade')->onDelete('cascade');
