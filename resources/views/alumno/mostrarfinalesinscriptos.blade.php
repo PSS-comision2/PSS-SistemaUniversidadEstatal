@@ -38,7 +38,7 @@
                                       </label>
                                     </div>
                                     <div class="2xl:w-2/3">
-                                      <input class="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500" type="text" value="{{$examenes_finales->first()->profesor->nombre}} {{$examenes_finales->first()->profesor->apellido}}" id="examenprofesor" name="examenprofesor" disabled>
+                                      <input class="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500" type="text" value="{{$examenes_finales[0]->profesor->nombre}} {{$examenes_finales[0]->profesor->apellido}}" id="examenprofesor" name="examenprofesor" disabled>
                                     </div>
                                   </div>
 
@@ -49,7 +49,7 @@
                                       </label>
                                     </div>
                                     <div class="2xl:w-2/3">
-                                      <input class="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500" type="text" value="{{$examenes_finales->first()->ubicacion}}"id="examenubicacion" name="examenubicacion" disabled>
+                                      <input class="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500" type="text" value="{{$examenes_finales[0]->ubicacion}}"id="examenubicacion" name="examenubicacion" disabled>
                                     </div>
                                   </div>
 
@@ -60,7 +60,7 @@
                                       </label>
                                     </div>
                                     <div class="2xl:w-2/3">
-                                      <input class="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500" type="text" value="{{$examenes_finales->first()->fecha}}"id="examenfecha" name="examenfecha" disabled>
+                                      <input class="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500" type="text" value="{{$examenes_finales[0]->fecha}}"id="examenfecha" name="examenfecha" disabled>
                                     </div>
                                   </div>
 
@@ -71,7 +71,7 @@
                                       </label>
                                     </div>
                                     <div class="2xl:w-2/3">
-                                      <input class="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500" type="text" value="{{$examenes_finales->first()->hora}}"id="examenhora" name="examenhora" disabled>
+                                      <input class="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500" type="text" value="{{$examenes_finales[0]->hora}}"id="examenhora" name="examenhora" disabled>
                                     </div>
                                   </div>
 
@@ -82,7 +82,7 @@
                                       </label>
                                     </div>
                                     <div class="2xl:w-2/3">
-                                      <input class="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500" type="textarea" value="{{$examenes_finales->first()->observacion}}"id="examenobservaciones" name="examenobservaciones" disabled>
+                                      <input class="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500" type="textarea" value="{{$examenes_finales[0]->observacion}}"id="examenobservaciones" name="examenobservaciones" disabled>
                                     </div>
                                   </div>
                             </div>

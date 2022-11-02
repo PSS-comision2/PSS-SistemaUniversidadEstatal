@@ -134,16 +134,22 @@ class ExamenFinalController extends Controller
     public function cerrar_mesa_vista() {
 
         $finales = ExamenFinal::all()->where('estado', 'Abierto');
-    
+
         return view('administrador.cerrarexamenfinal')->with('finales', $finales);
     }
 
     public function mostrar_finales_alumno(){
         $LU = Auth::user()->LU;
 
-        $finalessinrendir = Rinde::all()->where('LU_alumno',$LU)->whereNull('nota')->pluck('id_final')->toArray();
-        $hoy = Carbon::today();
-        $examenes_finales_filtrados = ExamenFinal::all()->whereIn('id',$finalessinrendir)->where('fecha', '>=', $hoy)->where('hora', '>=', date("H:i"));
+        $finalessinrendir = Rinde::all()->where('LU_alumno',$LU)->whereNull('nota');
+        $examenes_finales_filtrados = array();
+
+        foreach($finalessinrendir as $finalsinrendir){
+            if($finalsinrendir->final->estado == 'Abierto'){
+                array_push($examenes_finales_filtrados, $finalsinrendir->final);
+            }
+        }
+
         return view('alumno.mostrarfinalesinscriptos')->with('examenes_finales', $examenes_finales_filtrados);
     }
 }
