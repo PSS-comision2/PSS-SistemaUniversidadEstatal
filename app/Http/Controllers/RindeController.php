@@ -36,14 +36,22 @@ class RindeController extends Controller
         $finales_alumno_puede = ExamenFinal::whereNotIn('id', $finales_alumno)->get();
         $finales_puede_rendir = $finales_alumno_puede->where('estado', 'Abierto');
         $finales = array();
-        $materias = array();
-        $materias_rinde = Rinde::all()->where('LU_alumno', $LU)->where('nota','>=','4');
+
+        $materias_no_puede_inscribirse = array();
+
+        $materias_rinde = Rinde::all()->where('LU_alumno', $LU)->whereNull('nota');
+        $materias_aprobadas = Rinde::all()->where('LU_alumno', $LU)->where('nota','>=','4');
+
         foreach($materias_rinde as $materia_rinde){
-            array_push($materias, $materia_rinde->final->materia->id);
+            array_push($materias_no_puede_inscribirse, $materia_rinde->final->materia->id);
+        }
+
+        foreach($materias_aprobadas as $materia_aprobada){
+            array_push($materias_no_puede_inscribirse, $materia_aprobada->final->materia->id);
         }
 
         foreach($finales_puede_rendir as $final_puede_rendir){
-            if (! in_array($final_puede_rendir->materia->id, $materias))
+            if (! in_array($final_puede_rendir->materia->id, $materias_no_puede_inscribirse))
                 array_push($finales, $final_puede_rendir);
         }
 
