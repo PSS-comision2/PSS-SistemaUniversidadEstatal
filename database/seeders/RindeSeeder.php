@@ -40,16 +40,16 @@ class RindeSeeder extends Seeder
                 'id_final' => '4',
                 'nota' => '10'
             ],
-            [
-                'LU_alumno' => '127589',
-                'id_final' => '2',
-            ],
-
-
-
-
 
     ];
+
+    DB::table('rinde')->insert($data);
+
+    $data =
+        [
+            'LU_alumno' => '127589',
+            'id_final' => '2',
+        ];
 
     DB::table('rinde')->insert($data);
 
