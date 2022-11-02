@@ -32,7 +32,8 @@ class CursaController extends Controller
         $LU = Auth::user()->LU;
         $materias_inscripto = Cursa::all()->where('LU_alumno', $LU)->where('nota', null)->pluck('id_materia')->toArray();
         $materias_alumno = Cursa::all()->where('LU_alumno', $LU)->where('nota','Aprobado')->pluck('id_materia')->toArray();
-        $materias_puede_anotarse = Materia::whereNotIn('id', $materias_alumno)->get();
+        $materias_sin_nota = Cursa::all()->where('LU_alumno', $LU)->whereNull('nota')->pluck('id_materia')->toArray();
+        $materias_puede_anotarse = Materia::whereNotIn('id', $materias_alumno)->whereNotIn('id', $materias_sin_nota)->get();
         return view('alumno.inscribircursada')->with('materias_puede_anotarse', $materias_puede_anotarse)->with('materias_inscripto',$materias_inscripto);
     }
 
