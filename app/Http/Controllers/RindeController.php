@@ -32,8 +32,9 @@ class RindeController extends Controller
     public function create()
     {
         $LU = Auth::user()->LU;
-        $finales_alumno = Rinde::all()->where('LU_alumno', $LU)->where('nota','>','4')->pluck('id_final')->toArray();
-        $finales_alumno_puede = ExamenFinal::whereNotIn('id', $finales_alumno)->get();
+        $finales_alumno = Rinde::all()->where('LU_alumno', $LU)->where('nota','>=','4')->pluck('id_final')->toArray();
+        $finales_alumno_sin_nota = Rinde::all()->where('LU_alumno', $LU)->whereNull('nota')->pluck('id_final')->toArray();
+        $finales_alumno_puede = ExamenFinal::whereNotIn('id', $finales_alumno)->whereNotIn('id',$finales_alumno_sin_nota)->get();
         $finales_puede_rendir = $finales_alumno_puede->where('estado', 'Abierto');
         $finales = array();
 
