@@ -21,7 +21,7 @@ class RindeController extends Controller
      */
     public function index()
     {
-        
+
     }
 
     /**
@@ -32,15 +32,21 @@ class RindeController extends Controller
     public function create()
     {
         $LU = Auth::user()->LU;
-        $finales_alumno = Rinde::all()->where('LU_alumno', $LU)->where('nota','>=','4')->pluck('id_final')->toArray();
-        $finales_alumno_sin_nota = Rinde::all()->where('LU_alumno', $LU)->whereNull('nota')->pluck('id_final')->toArray();
-        $finales_alumno_puede = ExamenFinal::whereNotIn('id', $finales_alumno)->whereNotIn('id',$finales_alumno_sin_nota)->get();
+        $finales_alumno = Rinde::all()->where('LU_alumno', $LU)->pluck('id_final')->toArray();
+        $finales_alumno_puede = ExamenFinal::whereNotIn('id', $finales_alumno)->get();
         $finales_puede_rendir = $finales_alumno_puede->where('estado', 'Abierto');
         $finales = array();
+        $materias = array();
+        $materias_rinde = Rinde::all()->where('LU_alumno', $LU)->where('nota','>=','4');
+        foreach($materias_rinde as $materia_rinde){
+            array_push($materias, $materia_rinde->final->materia->id);
+        }
 
         foreach($finales_puede_rendir as $final_puede_rendir){
-            array_push($finales, $final_puede_rendir);
+            if (! in_array($final_puede_rendir->materia->id, $materias))
+                array_push($finales, $final_puede_rendir);
         }
+
 
         return view('alumno.inscribirfinal')->with('finales', $finales);
     }
