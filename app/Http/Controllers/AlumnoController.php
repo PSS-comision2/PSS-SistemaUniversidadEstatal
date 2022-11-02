@@ -116,7 +116,7 @@ class AlumnoController extends Controller
         $carrerasinscripto = Inscripto::all()->where('LU_alumno',$LU)->pluck('id_carrera')->toArray();
         $carreras = Carrera::whereNotIn('id',$carrerasinscripto)->get();
 
-        return view('alumno.inscribircarrera')->with('carreras', $carreras);
+        return view('alumno.inscribircarrera')->with('carreras', $carreras)->with('carrerasinscripto', $carrerasinscripto);
     }
 
     public function guardar_alumno_carrera(Request $request){

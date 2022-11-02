@@ -28,9 +28,10 @@ class CursaController extends Controller
     public function create()
     {
         $LU = Auth::user()->LU;
+        $materias_inscripto = Cursa::all()->where('LU_alumno', $LU)->where('nota', null)->pluck('id_materia')->toArray();
         $materias_alumno = Cursa::all()->where('LU_alumno', $LU)->where('nota','Aprobado')->pluck('id_materia')->toArray();
         $materias_puede_anotarse = Materia::whereNotIn('id', $materias_alumno)->get();
-        return view('alumno.inscribircursada')->with('materias_puede_anotarse', $materias_puede_anotarse);
+        return view('alumno.inscribircursada')->with('materias_puede_anotarse', $materias_puede_anotarse)->with('materias_inscripto',$materias_inscripto);
     }
 
     public function guardar_alumno_materia(Request $request){
